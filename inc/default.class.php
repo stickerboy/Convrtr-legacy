@@ -3,7 +3,7 @@
 // Classes
 class stckr { // yay for completely irrlevant class name!
 
-function __construct() {
+public function __construct() {
 	session_start();
 }
 
@@ -29,6 +29,7 @@ function Debug($function) {
 	echo '</pre>';
 }
 
+
 // String to Binary
 function strToBin($string) {
 	for($i=0;$i<strlen($string);$i++){
@@ -39,10 +40,15 @@ function strToBin($string) {
 
 // Binary to String
 function binToStr($string) {
-	$bin = pack('H*', base_convert($string, 2, 16));
-	return $bin;
+    $str = preg_replace("/[^01]/","", $string);
+    $len = strlen($str);
+    for ($i = 0; $i < $len; $i += 8)
+    {
+        $bin .= chr(bindec(substr($str,$i,8)));
+    }
+    return $bin;     
 }
-
+    
 // String to Hex
 function strToHex($string) {
     for ($i=0; $i < strlen($string); $i++) {
@@ -153,8 +159,6 @@ $maps = array (
 
 // Morse to String
 /**
- * Morse code encode/decode
- *
  * Powerby: Mgccl's
  * Doc: http://en.wikipedia.org/wiki/Morse_code
  * Source code: http://mgccl.com/2007/01/24/morse-code-in-php/
@@ -236,7 +240,7 @@ function strToMorsenary($string) {
 function mosenaryToStr($string) {
 	$pattern = array('.', '-'); $replacement = array('0', '1');
 	$string = str_replace($pattern, $replacement, $string);
-	$string = pack('H*', base_convert($string, 2, 16)); // can't access $this->strToBin here?
+    $string = $this->binToStr($string);
 	return $string;
 }
 
