@@ -2,13 +2,11 @@
 /**
 *
 * @package stickr framework (based on phpBB)
-* @version $Id: whoareyou.php 
+* @version $Id: index.php 
 * @copyright (c) 2010 Kenny Cameron
 * Developed using the phpBB template engine
 *
 */
-// Start our session
-session_start();
 
 // Include all the relevant files we need
 $root_path = (defined('ROOT_PATH')) ? ROOT_PATH : './';
@@ -17,6 +15,7 @@ require_once($root_path . 'inc/start.php');
 $stckr		= new stckr();
 $template 	= new Template(); // Needs to be done on every page we are setting up
 $template->set_custom_template($root_path . 'theme/html', 'default');  // This is important as it states where the template files are located
+include_once($root_path . 'inc/language.php');
 
 $page 		= "{$root_path}index.php";
 $mode 		= (isset($_GET['m'])) ? (string) $_GET['m'] : '';
