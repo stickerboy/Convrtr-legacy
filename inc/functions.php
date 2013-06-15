@@ -42,18 +42,8 @@ function page_header($page_title = '')
 		'IMG_PATH'				=> $root_path . 'theme/img/',
 		'MEDIA_PATH'			=> $root_path . 'img/',
 
-		'L_HOME'				=> 'Home',
-		
-		'L_DOWNLOAD'			=> 'Download',
-		'L_ENCODE'				=> 'Encode',
-		'L_DECODE'				=> 'Decode',
-		'L_SELECT_TEXT'			=> 'Select text',
-		'L_FILE_NAME'			=> 'File Name',
-		'L_MD5'					=> 'MD5',
-		'L_SIZE'				=> 'Size',
-		'L_BACKTOTOP'			=> 'Back to top',
-
 		'U_HOME'				=> "{$root_path}",
+		'U_WORDS'				=> "{$root_path}words.php",
 		'U_ABOUT'				=> "#about",
 		
 		'S_HIDDEN'				=> false,

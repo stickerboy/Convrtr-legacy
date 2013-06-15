@@ -1,8 +1,9 @@
-   
 $(document).ready(function() {
 
+    var $window = $(window)
+    
     $('.selectAll').click(function(){
-        $(this).closest('.convrt-box').find('textarea').select();
+        $(this).closest('.convrt-box').find('textarea, code').select();
     });
 
     $(".sh").click(function(e){
@@ -19,4 +20,7 @@ $(document).ready(function() {
             }
         });        
     });
+    
+    // make code pretty
+    window.prettyPrint && prettyPrint();
 });
