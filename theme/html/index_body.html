@@ -3,7 +3,7 @@
     	<div class="row">
     		<div class="span4 convrt-box" id="text">
     			<div class="code-title">
-    				Text
+                    {L_TEXT}
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -27,7 +27,7 @@
     		<!-- /.span4 -->
     		<div class="span4 convrt-box" id="bin">
     			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Binary_numeral_system">Binary</a>
+    				<a href="http://en.wikipedia.org/wiki/Binary_numeral_system">{L_BINARY}</a>
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -51,7 +51,7 @@
     		<!-- /.span4 -->
     		<div class="span4 convrt-box" id="hex">
     			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Hexidecimal">Hex</a>
+    				<a href="http://en.wikipedia.org/wiki/Hexidecimal">{L_HEX}</a>
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -74,7 +74,7 @@
     		</div>
     		<div class="span4 convrt-box" id="b64">
     			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Base64">Base 64</a>
+    				<a href="http://en.wikipedia.org/wiki/Base64">{L_BASE64}</a>
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -97,7 +97,7 @@
     		</div>
     		<div class="span4 convrt-box" id="dec">
     			<div class="code-title">
-    				<a href="http://www.asciitable.com">Dec / Char</a>
+    				<a href="http://www.asciitable.com">{L_DEC}</a>
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -120,7 +120,7 @@
     		</div>
     		<div class="span4 convrt-box" id="rev">
     			<div class="code-title">
-    				Reverse
+    				{L_REVERSE}
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -143,7 +143,7 @@
     		</div>
     		<div class="span4 convrt-box" id="morse">
     			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Morse">Morse</a>
+    				<a href="http://en.wikipedia.org/wiki/Morse">{L_MORSE}</a>
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -166,7 +166,7 @@
     		</div>
     		<div class="span4 convrt-box" id="url">
     			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Percent-encoding">URL Encoded</a>
+    				<a href="http://en.wikipedia.org/wiki/Percent-encoding">{L_URL_ENC}</a>
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -189,7 +189,7 @@
     		</div>
     		<div class="span4 convrt-box" id="morsenary">
     			<div class="code-title">
-    				Morsenary (. = 0, - = 1)
+    				{L_MORSENARY}
     			</div>
     			<form action="{U_HOME}" method="post">
     			<div class="control-group">
@@ -214,21 +214,22 @@
 		<div class="row">
 			<div class="span12 well convrt-box">
     			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Hash_function">Hash</a>
-    			</div><br />			
-				<code>{POST_HASH}</code>
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="hash" rows="9" class="span12">{POST_HASH}</textarea>
-    				</div>
-    			</div>				
-				<div class="btn-toolbar">   				
-					<div class="btn-group">
-						<a href="{U_HOME}?hash_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-					</div>
-				</div>				
+    				<a href="http://en.wikipedia.org/wiki/Hash_function">{L_HASH}</a> (<a href="#" class="sh">{L_SHOW}</a>)
+    			</div>
+                <div class="shh" style="display:none;"><br />
+                    <code>{POST_HASH}</code>
+                    <div class="control-group">
+                        <div class="controls">
+                            <textarea name="hash" rows="9" class="span12" readonly>{POST_HASH}</textarea>
+                        </div>
+                    </div>				
+                    <div class="btn-toolbar">   				
+                        <div class="btn-group">
+                            <a href="{U_HOME}?hash_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
+                            <a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
+                        </div>
+                    </div>
+                </div>    
 			</div>
-		</div>    	
-
+		</div>
 <!-- INCLUDE footer.html -->
