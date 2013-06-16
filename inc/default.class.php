@@ -271,7 +271,7 @@ class stckr { // yay for completely irrlevant class name!
         $spaces = substr_count($count_space, ' ');
         
         $wordlist = explode(" ", $string);
-        $result = array_combine($wordlist, array_fill(0, count(asort($wordlist)), 0));
+        $result = @array_combine($wordlist, array_fill(0, count(asort($wordlist)), 0));
         
         foreach($wordlist as $word) {
             $result[$word]++;

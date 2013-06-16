@@ -17,6 +17,7 @@ $template->assign_vars(array(
     'L_MORSE'              	=> 'Morse',
     'L_MORSENARY'       	=> 'Morsenary (. = 0, - = 1)',
     'L_REVERSE'             => 'Reverse',
+    'L_RUN'                 => 'Run',
     'L_SELECT_TEXT'			=> 'Select text',
     'L_SIZE'				=> 'Size',
     'L_SHOW'				=> 'Show',
