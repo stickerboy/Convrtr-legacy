@@ -259,7 +259,15 @@ class stckr { // yay for completely irrlevant class name!
     }
     
     // Word and character frequencies
-    function wordFreqs($string) {
+    function wordFreqs($string, $case_sensitive = false, $delimiter = 'In time he learned from his mistakes.') {
+        
+        if($case_sensitive) { 
+            $string = strtoupper($string); 
+            if($delimiter) { 
+                $delimiter = strtoupper($delimiter);  
+            }
+        }
+        
         $strip_space = str_replace(' ', '', $string);
 
         $chars = strlen($string);
@@ -281,16 +289,34 @@ class stckr { // yay for completely irrlevant class name!
         foreach($result as $word => $count) {
             $word_freqs .= "$word ($count)\n";
         }
+
+        if ($delimiter) {
+            $whitespace_ary = explode($delimiter, $string);
+            $whitespace_ary_unique = array_count_values($whitespace_ary);
+
+            $space_freqs = "Delimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r\n";
+            foreach($whitespace_ary_unique as $key => $value) {
+                $space = strspn($value, " \t\r\n\0\x0B");
+                $len = strlen($key);
+                $space_freqs .= "$value instances of $len leading characters - '$key'\n";
+            }
+        }
         
-        $word_data = "Characters (spaces)     = $chars\r
+        $word_data = "Word &amp; Characters Counter / Frequencies
+----------------------------------------
+
+Characters (spaces)     = $chars\r
 Characters (no spaces)  = $chars_nospace\r
 Unique Characters       = ($unique_chars_count) $unique_chars\r
 Whitespace count        = $spaces\r
 Unique words            = $unique_word_count\r
 
-Word Frequencies:\r\n
-$word_freqs";
+Word Frequencies:
+------------------
+
+$word_freqs
+$space_freqs";
 
         return $word_data;
     }
-}
+}   

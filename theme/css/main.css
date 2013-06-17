@@ -77,3 +77,10 @@ body {
         padding-top: 30px;
     }
 }
+
+.convrt-box .form-horizontal .control-label {
+    width:114px;
+}
+.convrt-box .form-horizontal .controls {
+    margin-left: 120px;
+}
