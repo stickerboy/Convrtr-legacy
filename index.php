@@ -3,7 +3,7 @@
 *
 * @package stickr framework (based on phpBB)
 * @version $Id: index.php 
-* @copyright (c) 2010 Kenny Cameron
+* @copyright (c) 2013 Kenny Cameron
 * Developed using the phpBB template engine
 *
 */

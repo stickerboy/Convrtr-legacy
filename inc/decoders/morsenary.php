@@ -6,15 +6,15 @@
 $morsenary = $_SESSION['morsenary'] = $_REQUEST['morsenary'];	
 
 if(!empty($morsenary)) {
-	$str 		= $stckr->mosenaryToStr($morsenary);
+	$str 		= $stckr->morsenaryToStr($morsenary);
 	$msy 		= $morsenary;	
 	
 	$bin 		= $stckr->strToBin($str);	
 	$hex		= $stckr->strToHex($str);
 	$b64 		= $stckr->strToB64($str);
 	$dec		= $stckr->strToDec($str);
-	$rev		= strrev($str);
-	$mor		= $stckr->strToMorse(strtoupper($str));	
+	$rev		= $stckr->reverseStr($str);
+	$mor		= $stckr->strToMorse($str);
 	$url 		= urlencode($str);
 	$hash		= $stckr->returnHash($str);
 }
@@ -25,6 +25,6 @@ $hexa 		= $_SESSION['hex'] 		= $hex;
 $base64 	= $_SESSION['base64'] 	= $b64;
 $decimal 	= $_SESSION['decimal'] 	= $dec;
 $reverse 	= $_SESSION['reverse'] 	= $rev;
-$morse 		= $_SESSION['morse'] 	= $mor;
 $urlenc 	= $_SESSION['url_enc'] 	= $dec;
+$morse 	    = $_SESSION['morse'] 	= $mor;
 $hashes 	= $_SESSION['hash'] 	= $hash;

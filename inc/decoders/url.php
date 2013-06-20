@@ -6,7 +6,6 @@
 $urldecode = $_SESSION['url_enc'] = $_REQUEST['urldecode'];	
 
 if(!empty($urldecode)) {
-
 	$str 		= urldecode($urldecode);
 	$url 		= $urldecode;	
 	
@@ -15,7 +14,7 @@ if(!empty($urldecode)) {
 	$b64 		= $stckr->strToB64($str);
 	$dec		= $stckr->strToDec($str);
 	$rev		= strrev($str);	
-	$mor		= $stckr->strToMorse(strtoupper($str));
+	$mor		= $stckr->strToMorse($str);
 	$msy 		= $stckr->strToMorsenary($str);
 	$hash		= $stckr->returnHash($str);
 }

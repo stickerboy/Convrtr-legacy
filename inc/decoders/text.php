@@ -10,8 +10,8 @@ if(!empty($text)) {
 	$hex		= $stckr->strToHex($text);
 	$b64 		= $stckr->strToB64($text);
 	$dec		= $stckr->strToDec($text);
-	$rev		= strrev($text);
-	$mor		= $stckr->strToMorse(strtoupper($text));
+	$rev		= $stckr->reverseStr($text);
+	$mor		= $stckr->strToMorse($text);
 	$url 		= urlencode($text);
 	$msy		= $stckr->strToMorsenary($text);	
 	$hash		= $stckr->returnHash($text);

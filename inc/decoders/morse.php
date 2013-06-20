@@ -13,7 +13,7 @@ if(!empty($morse)) {
 	$hex		= $stckr->strToHex($str);
 	$b64 		= $stckr->strToB64($str);
 	$dec		= $stckr->strToDec($str);
-	$rev		= strrev($str);
+	$rev		= $stckr->reverseStr($str);
 	$url 		= urlencode($str);
 	$msy 		= $stckr->strToMorsenary($str);
 	$hash		= $stckr->returnHash($str);

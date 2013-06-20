@@ -12,6 +12,8 @@ $template->assign_vars(array(
     'L_FILE_NAME'			=> 'File Name',
 	'L_HASH' 				=> 'Hash',
 	'L_HEX'    				=> 'Hex',
+	'L_HEX_ANALYSE'         => 'Analyse hex frequencies and patterns',
+	'L_HEXP'    			=> 'Hex Patterns',
 	'L_HIDE'				=> 'Hide',
 	'L_HOME'				=> 'Home',
     'L_MD5'					=> 'MD5',

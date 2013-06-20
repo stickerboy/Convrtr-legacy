@@ -7,7 +7,8 @@ class stckr { // yay for completely irrlevant class name!
         session_start();
     }
     
-    /* Format size of file 
+    /* 
+     * Format size of file 
      * @author Mike Zriel
      * @date 7 March 2011
      * @website www.zriel.com
@@ -22,7 +23,9 @@ class stckr { // yay for completely irrlevant class name!
         }
     }
     
-    // Debug whatever
+    /* 
+     * Debug whatever
+     */
     function Debug($function) {
         echo '<pre><br /><br />';
         print_r($function);
@@ -30,221 +33,229 @@ class stckr { // yay for completely irrlevant class name!
     }
     
     
-    // String to Binary
+    /* 
+     * String to Binary
+     * $string  - text string ('X')
+     * 
+     * returns binary string 
+     */
     function strToBin($string) {
         for($i=0;$i<strlen($string);$i++){
             $bin .= sprintf("%08s ",decbin(ord($string[$i])));
         }
+        
         return $bin;
     }
     
-    // Binary to String
+    /* 
+     * Binary to String
+     * $string  - binary string (01011000 - 'X')
+     * 
+     * returns text string
+     */
     function binToStr($string) {
-        $str = preg_replace("/[^01]/","", $string);
-        $len = strlen($str);
+        $string = preg_replace("/[^01]/","", $string);
+        $len = strlen($string);
         for ($i = 0; $i < $len; $i += 8)
         {
-            $bin .= chr(bindec(substr($str,$i,8)));
+            $str .= chr(bindec(substr($string,$i,8)));
         }
-        return $bin;     
+        
+        return $str;     
     }
         
-    // String to Hex
-    function strToHex($string) {
+    /* 
+     * String to Hex
+     * $string                  - text string ('foo bar')
+     * $delimeter (optional)    - sets spacer between hex chars (either space or hyphen)
+     * 
+     * returns hexadecimal string
+     */
+    function strToHex($string, $delimiter = ' ') {
+        $spacer = ($delimiter != ' ') ? '-' : ' ';
         for ($i=0; $i < strlen($string); $i++) {
-            $hex .= dechex(ord($string[$i])) . " ";
+            $lead = (ord($string[$i]) < 16) ? '0' : '';
+            $hex .= $lead . dechex(ord($string[$i])) . $spacer;
         }
+        
         return $hex;
     }
     
-    // Hex to String
+    /* 
+     * Hex to String
+     * $string  - hexadecimal string (66 6f 6f 20 62 61 72  - 'foo bar')
+     * 
+     * returns text string
+     */
     function hexToStr($string) {
-        $string = str_replace(' ','',$string);
-        for ($i=0; $i < strlen($string)-1; $i+=2) {
-            $str .= chr(hexdec($string[$i].$string[$i+1]));
-        }
+        $pattern = array(' ', '-', '\x', '0x');
+        $string = str_replace($pattern, '', $string);
+        $str = pack('H*', $string);
+        
         return $str;
     }
     
-    // String to Base 64
+    /* 
+     * String to Base 64
+     * $string  - text string ('foo bar')
+     * 
+     * returns base64 encoded string
+     */
     function strToB64($string) {
-        $string = stripslashes($string);
         return base64_encode($string);
     }
     
-    // String to Base 64
+    /* 
+     * String to Base 64
+     * $string  - base 64 string (Zm9vIGJhcg== - 'foo bar')
+     * 
+     * returns text string
+     */
     function b64ToStr($string) {
         return base64_decode($string);
     }
-    
-    // String to Decimal
+
+    /* 
+     * String to Decimal
+     * $string  - text string ('foo bar')
+     * 
+     * returns decimal string
+     */ 
     function strToDec($string) {
         for ($i=0; $i < strlen($string); $i++) {
             $dec .= ord($string[$i]) . " ";
         }
+        
         return $dec;
     }
     
-    // String to Decimal
+    /* 
+     * Decimal to String
+     * $string  - decimal string (102 111 111 32 98 97 114  - 'foo bar')
+     * 
+     * returns text string
+     */ 
     function decToStr($string) {
         $split = explode(" ", $string);
         for($i=0; $i < sizeof($split); $i++)
         {
-            $dec .= chr($split[$i]);
+            $str .= chr($split[$i]);
         }
-        return trim($dec); // was returning extra null char at end
+        
+        return trim($str); // strip extra null char at end
     }
     
-    // String to Morse
-    // https://github.com/balsama/sandbox/blob/master/morse.php
+    /*
+     * Maps an array of characters to their morse equivalent
+     * Periods, hyphens and some other characters are exluded
+     * 
+     * returns array
+     */
+    function morseMap() {
+        $map = array (
+            '0' => '----- ','1' => '.---- ','2' => '..--- ','3' => '...-- ','4' => '....- ','5' => '..... ','6' => '-.... ','7' => '--... ',
+            '8' => '---.. ','\'' => '.----. ','9' => '----. ','B' => '-... ',',' => '-.-.-. ','@' => '.--.-. ','C' => '-.-. ','"' => '.-..-. ','/' => '-..-. ',
+            'F' => '..-. ','(' => '-.--. ','P' => '.--. ','G' => '--. ','H' => '.... ','J' => '.--- ',')' => '-.--.- ','Q' => '--.- ',
+            'K' => '-.- ','L' => '.-.. ','?' => '..--.. ','Z' => '--.. ','D' => '-.. ',':' => '---... ','S' => '... ','I' => '.. ','O' => '--- ','!' => '-.-.-- ',
+            'Y' => '-.-- ',',' => '--..-- ','_' => '..-- .- ','M' => '-- ','R' => '.-. ','N' => '-. ','=' => '-...- ','V' => '...- ','$' => '...-..- ',
+            'X' => '-..- ','U' => '..- ','A' => '.- ','T' => '- ','W' => '.-- ','E' => '. ',' ' => ' ', 'Ch' => '----',
+        );
+        return $map;
+    }
+    /* 
+     * String to Morse
+     * $string  - text string ('foo bar')
+     * https://github.com/balsama/sandbox/blob/master/morse.php
+     * 
+     * returns morse code string
+     */
     function strToMorse($string) {
-    $maps = array (
-      'A' => '.-',
-      'B' => '-...',
-      'C' => '-.-.',
-      'D' => '-..',
-      'E' => '.',
-      'F' => '..-.',
-      'G' => '--.',
-      'H' => '....',
-      'I' => '..',
-      'J' => '.---',
-      'K' => '-.-',
-      'L' => '.-..',
-      'M' => '--',
-      'N' => '-.',
-      'O' => '---',
-      'P' => '.--.',
-      'Q' => '--.-',
-      'R' => '.-.',
-      'S' => '...',
-      'T' => '-',
-      'U' => '..-',
-      'V' => '...-',
-      'W' => '.--',
-      'X' => '-..-',
-      'Y' => '-.--',
-      'Z' => '--..',
-      '0' => '-----',
-      '1' => '.----',
-      '2' => '..---',
-      '3' => '...--',
-      '4' => '....-',
-      '5' => '.....',
-      '6' => '-....',
-      '7' => '--...',
-      '8' => '---..',
-      '9' => '----.',
-      '.' => '.-.-.-',
-      ',' => '--..--',
-      '?' => '..--..',
-      '\'' => '.----.',
-      ' ' => ' ',
-    );
-    
-      $string = str_split(htmlspecialchars($string, ENT_QUOTES, 'UTF-8'));
-      $converted = array();
-      foreach ($string as $letter) {
-        foreach ($maps as $input => $output) {
-          if ($letter === $input) {
-            $converted[] = $output;
-          }
+        $maps = $this->morseMap();
+
+        $string = str_split(strtoupper($string));
+        $converted = array();
+        foreach ($string as $letter) {
+            foreach ($maps as $input => $output) {
+                if ($letter === $input) {
+                    $converted[] = $output;
+                }
+            }
         }
-      }
-      
-      $processed = implode(' ', $converted);
-    
-      return $processed;
+        $morse = implode('', $converted);
+
+        return $morse;
     }
     
-    // Morse to String
-    /**
-     * Powerby: Mgccl's
+    /*
+     * Morse to String - Powerby: Mgccl's
      * Doc: http://en.wikipedia.org/wiki/Morse_code
      * Source code: http://mgccl.com/2007/01/24/morse-code-in-php/
+     * $string - morse code string (..-. --- ---   -... .- .-. ['foo bar'])
+     * 
+     * returns text string
      */
     function morseToStr($string) {
         $string .= ' ';
-        $array['0'] = '----- ';
-        $array['1'] = '.---- ';
-        $array['2'] = '..--- ';
-        $array['3'] = '...-- ';
-        $array['-'] = '-....- ';
-        $array['4'] = '....- ';
-        $array['5'] = '..... ';
-        $array['6'] = '-.... ';
-        $array['7'] = '--... ';
-        $array['8'] = '---.. ';
-        $array['\''] = '.----. ';
-        $array['9'] = '----. ';
-        $array['B'] = '-... ';
-        $array[';'] = '-.-.-. ';
-        $array['@'] = '.--.-. ';
-        $array['C'] = '-.-. ';
-        $array['"'] = '.-..-. ';
-        $array['/'] = '-..-. ';
-        $array['F'] = '..-. ';
-        $array['('] = '-.--. ';
-        $array['P'] = '.--. ';
-        $array['G'] = '--. ';
-        $array['H'] = '.... ';
-        $array['J'] = '.--- ';
-        $array[')'] = '-.--.- ';
-        $array['Q'] = '--.- ';
-        $array['.'] = '.-.-.- ';
-        $array['K'] = '-.- ';
-        $array['L'] = '.-.. ';
-        $array['?'] = '..--.. ';
-        $array['Z'] = '--.. ';
-        $array['D'] = '-.. ';
-        $array[':'] = '---... ';
-        $array['S'] = '... ';
-        $array['I'] = '.. ';
-        $array['O'] = '--- ';
-        $array['!'] = '-.-.-- ';
-        $array['Y'] = '-.-- ';
-        $array[','] = '--..-- ';
-        $array['&'] = '. ... ';
-        $array['_'] = '..-- .- ';
-        $array['M'] = '-- ';
-        $array['&'] = '.-...- ';
-        $array['R'] = '.-. ';
-        $array['N'] = '-. ';
-        $array['='] = '-...- ';
-        $array['V'] = '...- ';
-        $array['$'] = '...-..- ';
-        $array['X'] = '-..- ';
-        $array['U'] = '..- ';
-        $array['A'] = '.- ';
-        $array['T'] = '- ';
-        $array['W'] = '.-- ';
-        $array[')'] = '-.--.- ';
-        $array['E'] = '. ';
-        $array['    '] = ' ';
-    
-        foreach ($array as $key => $var) {
+        $maps = $this->morseMap();
+
+        foreach ($maps as $key => $var) {
             $string = str_replace($var, $key, $string);
         }
         return $string;
     }
     
-    // String to Morsenary
+    /* 
+     * String to Morsenary
+     * Morsenary has the appearance of morse, but is actually binary
+     * Text is converted to binary, then each 0 and 1 are replaced with . and - repectively
+     * $string - text string ('foo bar')
+     * 
+     * returns morsenary
+     */
     function strToMorsenary($string) {
-        $string = $this->strToBin($string);
+        $morsenary = $this->strToBin($string);
         $pattern = array('0', '1'); $replacement = array('.', '-');
-        $string = str_replace($pattern, $replacement, $string);
-        return $string;
+        $morsenary = str_replace($pattern, $replacement, $morsenary);
+        
+        return $morsenary;
     }
     
-    // Morsenary to String
-    function mosenaryToStr($string) {
+    /* 
+     * Morsenary to String
+     * The reverse of the strToMorsenary() function - replace ./- with 0/1
+     * Then convert resulting binary back to a text string
+     * $string - morsenary string: 
+     * 
+     * returns text string
+     */
+    function morsenaryToStr($string) {
         $pattern = array('.', '-'); $replacement = array('0', '1');
         $string = str_replace($pattern, $replacement, $string);
         $string = $this->binToStr($string);
+        
         return $string;
     }
     
-    // Return hash values
+    /* 
+     * Reverse String
+     * $string  - text string ('foo bar')
+     * 
+     * returns text string
+     */
+    function reverseStr($string) {
+        $ary        = str_split($string);
+        $rev_ary    = array_reverse($ary);
+        $rev        = implode($rev_ary);
+        
+        return $rev;
+    }
+    
+    /* 
+     * Return hash values
+     * $string  - text string ('foo bar')     
+     * 
+     * returns text string
+     */
     function returnHash($string) {
         $hash = "      md2: " . hash('md2', $string) . "\n";
         $hash .= "      md4: " . hash('md4', $string) . "\n";
@@ -258,8 +269,39 @@ class stckr { // yay for completely irrlevant class name!
         return $hash;
     }
     
-    // Word and character frequencies
-    function wordFreqs($string, $case_sensitive = false, $delimiter = 'In time he learned from his mistakes.') {
+    function charCounts($string, $uc = false) {
+        $strip_space    = str_replace(' ', '', $string);
+        $counts         = '';
+        $counts         .= "Word &amp; Characters Counter / Frequencies\r\n----------------------------------------\r\n";
+        
+        $chars          = strlen($string);
+        $chars_nospace  = strlen($strip_space);
+        $size           = $this->formatSize(mb_strlen($string, '8bit'));        
+        
+        $counts .="Characters (spaces)     = $chars\r\nCharacters (no spaces)  = $chars_nospace\r\nFilesize                = $size\r\n";
+        
+        $count_space        = preg_replace('[^\s]', '', $string);
+        $spaces             = substr_count($count_space, ' ');
+        $counts             .= "Whitespace count        = $spaces\r\n";
+        
+        if($uc) {
+            $unique_chars       = count_chars($strip_space, 3);
+            $unique_chars_count = strlen($unique_chars);
+            $counts .= "Unique Characters       = ($unique_chars_count) $unique_chars\r\n";
+        }
+        
+        return $counts;
+    }
+
+    /* 
+     * Word and character frequency analysis
+     * $string                      - text taken from $_POST/$_REQUEST
+     * $case_sensitive (optional)   - force uppercase on string
+     * $delimiter (optional)        - explode to array based on value given
+     * 
+     * returns a lot of stuff
+     */
+    function stringAnalyse($string, $case_sensitive = false, $delimiter = '') {
         
         if($case_sensitive) { 
             $string = strtoupper($string); 
@@ -268,55 +310,95 @@ class stckr { // yay for completely irrlevant class name!
             }
         }
         
-        $strip_space = str_replace(' ', '', $string);
+        $data .= $this->charCounts($string, true);
 
-        $chars = strlen($string);
-        $chars_nospace = strlen($strip_space);
-        $unique_chars = count_chars($strip_space, 3);
-        $unique_chars_count = strlen($unique_chars);
-
-        $count_space = preg_replace('[^\s]', '', $string);
-        $spaces = substr_count($count_space, ' ');
-        
-        $wordlist = explode(" ", $string);
-        $result = @array_combine($wordlist, array_fill(0, count(asort($wordlist)), 0));
+        $wordlist   = explode(" ", $string);
+        $result     = @array_combine($wordlist, array_fill(0, count(asort($wordlist)), 0));
         
         foreach($wordlist as $word) {
             $result[$word]++;
         }
         $unique_word_count = count($result);
         
+        $data .= "Unique words            = $unique_word_count\r\n";   
         foreach($result as $word => $count) {
             $word_freqs .= "$word ($count)\n";
         }
+        $data .= "\nWord Frequencies:\r\n------------------\r\n$word_freqs\r\n";
 
         if ($delimiter) {
-            $whitespace_ary = explode($delimiter, $string);
-            $whitespace_ary_unique = array_count_values($whitespace_ary);
-
-            $space_freqs = "Delimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r\n";
+            $whitespace_ary         = explode($delimiter, $string);
+            $whitespace_ary_unique  = array_count_values($whitespace_ary);
+            
+            ksort($whitespace_ary_unique);
+            $data                  .= "Delimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r";
+            
             foreach($whitespace_ary_unique as $key => $value) {
-                $space = strspn($value, " \t\r\n\0\x0B");
-                $len = strlen($key);
-                $space_freqs .= "$value instances of $len leading characters - '$key'\n";
+                $space  = strspn($value, " \t\r\n\0\x0B");
+                $len    = strlen($key);
+                $data .= "\n$value instance(s) of $len leading characters - '$key'\r";
+            }
+        }
+
+        return $data;
+    }
+        
+    /* 
+     * Hex pattern and character frequency analysis
+     * $string                      - text taken from $_POST/$_REQUEST
+     * $case_sensitive (optional)   - force uppercase on string
+     * $delimiter (optional)        - explode to array based on value given
+     * 
+     * returns a lot of stuff
+     */
+    function hexAnalyse($string, $case_sensitive = false, $delimiter = '') {
+        
+        if($case_sensitive) { 
+            $string = strtoupper($string); 
+            if($delimiter) { 
+                $delimiter = strtoupper($delimiter);  
             }
         }
         
-        $word_data = "Word &amp; Characters Counter / Frequencies
-----------------------------------------
+        $data .= $this->charCounts($string);
 
-Characters (spaces)     = $chars\r
-Characters (no spaces)  = $chars_nospace\r
-Unique Characters       = ($unique_chars_count) $unique_chars\r
-Whitespace count        = $spaces\r
-Unique words            = $unique_word_count\r
+        if ($delimiter) {
+            $whitespace_ary         = explode($delimiter, $string);
+            $whitespace_ary_unique  = array_count_values($whitespace_ary);
 
-Word Frequencies:
-------------------
+            ksort($whitespace_ary_unique);
+            $data                  .= "\nDelimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r\n";
 
-$word_freqs
-$space_freqs";
+            foreach($whitespace_ary_unique as $key => $value) {
+                $data .= "\n Val: '$key'    Freq: $value\r";
+            }
 
-        return $word_data;
+            /* This is very processor heavy - commented out for now
+             * It's also really bad code haha
+             * Need to find a way to accomplish the same thing using regex
+             * Trying to match double, triple and quad values in a large hex string
+             *
+             * Examples - 0A-0A  /  FF-FF-FF / 00-00-00-00
+             * Spitting out the original string with d/t/q strings highlighted would be cool
+             
+            $d = 0;  $t = 0; $q = 0;
+            for ($i = 0; $i < count($whitespace_ary); $i++) {
+                if($whitespace_ary[$i] == $whitespace_ary[$i+1]) {
+                    $d++;
+                }
+                if($whitespace_ary[$i] == $whitespace_ary[$i+1] && $whitespace_ary[$i] == $whitespace_ary[$i+2]) {
+                    $t++;
+                }
+                if($whitespace_ary[$i] == $whitespace_ary[$i+1] && $whitespace_ary[$i] == $whitespace_ary[$i+2] && $whitespace_ary[$i] == $whitespace_ary[$i+3]) {
+                    $t++;
+                }                
+            }
+            $data .= "\r\n$d duplicate value(s) found";
+            $data .= "\r\n$t triplicate value(s) found";
+            $data .= "\r\n$t quad value(s) found\n";
+            */
+        }
+
+        return $data;
     }
 }   

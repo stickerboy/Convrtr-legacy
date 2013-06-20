@@ -12,8 +12,8 @@ if(!empty($base64)) {
 	$bin 		= $stckr->strToBin($str);
 	$hex		= $stckr->strToHex($str);
 	$dec		= $stckr->strToDec($str);
-	$rev		= strrev($str);
-	$mor		= $stckr->strToMorse(strtoupper($str));
+	$rev		= $stckr->reverseStr($str);
+	$mor		= $stckr->strToMorse($str);
 	$url 		= urlencode($str);
 	$msy 		= $stckr->strToMorsenary($str);
 	$hash		= $stckr->returnHash($str);

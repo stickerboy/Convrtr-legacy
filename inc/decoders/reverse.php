@@ -6,14 +6,14 @@
 $reverse = $_SESSION['reverse'] = $_REQUEST['reverse'];	
 
 if(!empty($reverse)) {
-	$str 		= strrev($reverse);
+	$str 		= $stckr->reverseStr($reverse);
 	$rev 		= $reverse;	
 	
 	$bin 		= $stckr->strToBin($str);	
 	$hex		= $stckr->strToHex($str);
 	$b64 		= $stckr->strToB64($str);
 	$dec		= $stckr->strToDec($str);
-	$mor		= $stckr->strToMorse(strtoupper($str));
+	$mor		= $stckr->strToMorse($str);
 	$url 		= urlencode($str);
 	$msy 		= $stckr->strToMorsenary($str);
 	$hash		= $stckr->returnHash($str);
