@@ -6,17 +6,17 @@
 $decimal = $_SESSION['decimal'] = $_REQUEST['decimal'];	
 
 if(!empty($decimal)) {
-	$str 		= $stckr->decToStr($decimal);
+	$str 		= $Convrtr->decToStr($decimal);
 	$dec 		= $decimal;	
 	
-	$bin 		= $stckr->strToBin($str);	
-	$hex		= $stckr->strToHex($str);
-	$b64 		= $stckr->strToB64($str);
-	$rev		= $stckr->reverseStr($str);
-	$mor		= $stckr->strToMorse($str);
+	$bin 		= $Convrtr->strToBin($str);	
+	$hex		= $Convrtr->strToHex($str);
+	$b64 		= $Convrtr->strToB64($str);
+	$rev		= $Convrtr->reverseStr($str);
+	$mor		= $Convrtr->strToMorse($str);
 	$url 		= urlencode($str);
-	$msy 		= $stckr->strToMorsenary($str);
-	$hash		= $stckr->returnHash($str);
+	$msy 		= $Convrtr->strToMorsenary($str);
+	$hash		= $Convrtr->returnHash($str);
 }
 
 $text 		= $_SESSION['text']		= $str;

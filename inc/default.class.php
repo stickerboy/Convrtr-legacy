@@ -1,7 +1,7 @@
 <?php
 
 // Classes
-class stckr { // yay for completely irrlevant class name!
+class Convrtr {
 
     public function __construct() {
         session_start();
@@ -76,6 +76,7 @@ class stckr { // yay for completely irrlevant class name!
         for ($i=0; $i < strlen($string); $i++) {
             $lead = (ord($string[$i]) < 16) ? '0' : '';
             $hex .= $lead . dechex(ord($string[$i])) . $spacer;
+            $hex = strtoupper($hex);
         }
         
         return $hex;

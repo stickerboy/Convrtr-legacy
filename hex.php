@@ -12,7 +12,7 @@
 $root_path = (defined('ROOT_PATH')) ? ROOT_PATH : './';
 require_once($root_path . 'inc/start.php');
 
-$stckr		= new stckr();
+$Convrtr    = new Convrtr();
 $template 	= new Template(); // Needs to be done on every page we are setting up
 $template->set_custom_template($root_path . 'theme/html', 'default');  // This is important as it states where the template files are located
 include_once($root_path . 'inc/language.php');

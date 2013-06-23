@@ -9,14 +9,14 @@ if(!empty($urldecode)) {
 	$str 		= urldecode($urldecode);
 	$url 		= $urldecode;	
 	
-	$bin 		= $stckr->strToBin($str);	
-	$hex		= $stckr->strToHex($str);
-	$b64 		= $stckr->strToB64($str);
-	$dec		= $stckr->strToDec($str);
-	$rev		= strrev($str);	
-	$mor		= $stckr->strToMorse($str);
-	$msy 		= $stckr->strToMorsenary($str);
-	$hash		= $stckr->returnHash($str);
+	$bin 		= $Convrtr->strToBin($str);	
+	$hex		= $Convrtr->strToHex($str);
+	$b64 		= $Convrtr->strToB64($str);
+	$dec		= $Convrtr->strToDec($str);
+	$rev		= $Convrtr->reverseStr($str);	
+	$mor		= $Convrtr->strToMorse($str);
+	$msy 		= $Convrtr->strToMorsenary($str);
+	$hash		= $Convrtr->returnHash($str);
 }
 
 $text 		= $_SESSION['text']		= $str;

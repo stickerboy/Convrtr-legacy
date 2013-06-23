@@ -6,17 +6,17 @@
 $morse = $_SESSION['morse'] = $_REQUEST['morse'];	
 
 if(!empty($morse)) {
-	$str 		= $stckr->morseToStr($morse);
+	$str 		= $Convrtr->morseToStr($morse);
 	$mor 		= $morse;	
 	
-	$bin 		= $stckr->strToBin($str);	
-	$hex		= $stckr->strToHex($str);
-	$b64 		= $stckr->strToB64($str);
-	$dec		= $stckr->strToDec($str);
-	$rev		= $stckr->reverseStr($str);
+	$bin 		= $Convrtr->strToBin($str);	
+	$hex		= $Convrtr->strToHex($str);
+	$b64 		= $Convrtr->strToB64($str);
+	$dec		= $Convrtr->strToDec($str);
+	$rev		= $Convrtr->reverseStr($str);
 	$url 		= urlencode($str);
-	$msy 		= $stckr->strToMorsenary($str);
-	$hash		= $stckr->returnHash($str);
+	$msy 		= $Convrtr->strToMorsenary($str);
+	$hash		= $Convrtr->returnHash($str);
 }
 
 $text 		= $_SESSION['text']		= $str;

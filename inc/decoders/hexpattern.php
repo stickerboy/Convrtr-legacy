@@ -8,7 +8,7 @@ $case_sensitive = (isset($_REQUEST['case_sensitive'])) ? true : false;
 $delimiter = (isset($_REQUEST['delimiter'])) ? $_REQUEST['delimiter'] : '';
 
 if(!empty($hexpattern)) {
-	$str           = $stckr->hexAnalyse($hexpattern, $case_sensitive, $delimiter);
+	$str           = $Convrtr->hexAnalyse($hexpattern, $case_sensitive, $delimiter);
 	$hex_pattern   = $hexpattern;
 }
 

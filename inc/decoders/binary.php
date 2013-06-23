@@ -6,17 +6,17 @@
 $binary = $_SESSION['binary'] = $_REQUEST['binary'];	
 
 if(!empty($binary)) {
-	$str 		= $stckr->binToStr($binary);
+	$str 		= $Convrtr->binToStr($binary);
 	$bin 		= $binary;	
 	
-	$hex		= $stckr->strToHex($str);
-	$b64 		= $stckr->strToB64($str);
-	$dec		= $stckr->strToDec($str);
-	$rev		= $stckr->reverseStr($str);
-	$mor		= $stckr->strToMorse($str);
+	$hex		= $Convrtr->strToHex($str);
+	$b64 		= $Convrtr->strToB64($str);
+	$dec		= $Convrtr->strToDec($str);
+	$rev		= $Convrtr->reverseStr($str);
+	$mor		= $Convrtr->strToMorse($str);
 	$url 		= urlencode($str);
-	$msy 		= $stckr->strToMorsenary($str);
-	$hash		= $stckr->returnHash($str);
+	$msy 		= $Convrtr->strToMorsenary($str);
+	$hash		= $Convrtr->returnHash($str);
 }
 
 $text 		= $_SESSION['text']		= $str;

@@ -6,17 +6,17 @@
 $base64 = $_SESSION['base64'] = $_REQUEST['base64'];	
 
 if(!empty($base64)) {
-	$str 		= $stckr->b64ToStr($base64);
+	$str 		= $Convrtr->b64ToStr($base64);
 	$b64		= $base64;
 	
-	$bin 		= $stckr->strToBin($str);
-	$hex		= $stckr->strToHex($str);
-	$dec		= $stckr->strToDec($str);
-	$rev		= $stckr->reverseStr($str);
-	$mor		= $stckr->strToMorse($str);
+	$bin 		= $Convrtr->strToBin($str);
+	$hex		= $Convrtr->strToHex($str);
+	$dec		= $Convrtr->strToDec($str);
+	$rev		= $Convrtr->reverseStr($str);
+	$mor		= $Convrtr->strToMorse($str);
 	$url 		= urlencode($str);
-	$msy 		= $stckr->strToMorsenary($str);
-	$hash		= $stckr->returnHash($str);
+	$msy 		= $Convrtr->strToMorsenary($str);
+	$hash		= $Convrtr->returnHash($str);
 }
 
 $text 		= $_SESSION['text']		= $str;
