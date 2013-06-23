@@ -46,9 +46,10 @@
               <li<!-- IF PAGE_TITLE eq 'Home' --> class="active"<!-- ENDIF -->><a href="{U_HOME}" title="{L_HOME}">{L_HOME}</a></li>
               <li<!-- IF PAGE_TITLE eq 'Words' --> class="active"<!-- ENDIF -->><a href="{U_WORDS}" title="{L_WORDF}">{L_WORDF}</a></li>
               <li<!-- IF PAGE_TITLE eq 'Hex' --> class="active"<!-- ENDIF -->><a href="{U_HEX}" title="{L_HEXP}">{L_HEXP}</a></li>
+              <li<!-- IF PAGE_TITLE eq 'File Headers' --> class="active"<!-- ENDIF -->><a href="{U_FILE}" title="{L_FILEH}">{L_FILEH}</a></li>
             </ul>
             <form class="navbar-form pull-right" action="{U_HOME}" method="post">
-                <input type="submit" name="clss" value="Clear Session" class="btn btn-mini"/>
+                <input type="submit" name="clss" value="Clear Session" class="btn disabled"/>
             </form>     			
             <div class="pull-right visible-desktop">
                 <ul class="nav">

@@ -45,6 +45,7 @@ function page_header($page_title = '')
 		'U_HOME'				=> "{$root_path}",
 		'U_WORDS'				=> "{$root_path}words.php",
 		'U_HEX'   				=> "{$root_path}hex.php",
+		'U_FILE'   				=> "{$root_path}file.php",
 		'U_ABOUT'				=> "#about",
 		
 		'S_HIDDEN'				=> false,

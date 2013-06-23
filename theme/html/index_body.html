@@ -217,19 +217,18 @@
     				<a href="http://en.wikipedia.org/wiki/Hash_function">{L_HASH}</a> (<a href="#" class="sh">{L_SHOW}</a>)
     			</div>
                 <div class="shh" style="display:none;"><br />
-                    <code>{POST_HASH}</code>
                     <div class="control-group">
+                        <div class="btn-toolbar">   				
+                            <div class="btn-group">
+                                <a href="{U_HOME}?hash_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
+                                <a class="btn btn-inverse disabled" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
+                            </div>
+                        </div>                         
                         <div class="controls">
-                            <textarea name="hash" rows="9" class="span12" readonly>{POST_HASH}</textarea>
-                        </div>
-                    </div>				
-                    <div class="btn-toolbar">   				
-                        <div class="btn-group">
-                            <a href="{U_HOME}?hash_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-                            <a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
+                            <pre class="prettyprint linenums">{POST_HASH}</pre>
                         </div>
                     </div>
-                </div>    
+                </div>
 			</div>
-		</div>
+		</div>     
 <!-- INCLUDE footer.html -->

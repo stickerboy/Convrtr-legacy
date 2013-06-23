@@ -258,13 +258,13 @@ class Convrtr {
      * returns text string
      */
     function returnHash($string) {
-        $hash = "      md2: " . hash('md2', $string) . "\n";
-        $hash .= "      md4: " . hash('md4', $string) . "\n";
-        $hash .= "      md5: " . hash('md5', $string) . "\n";
-        $hash .= "     sha1: " . hash('sha1', $string) . "\n";
-        $hash .= " sha224: " . hash('sha224', $string) . "\n";
-        $hash .= " sha256: " . hash('sha256', $string) . "\n";
-        $hash .= " sha384: " . hash('sha384', $string) . "\n";
+        $hash = "    md2: " . hash('md2', $string) . "<br />";
+        $hash .= "    md4: " . hash('md4', $string) . "<br />";
+        $hash .= "    md5: " . hash('md5', $string) . "<br />";
+        $hash .= "   sha1: " . hash('sha1', $string) . "<br />";
+        $hash .= " sha224: " . hash('sha224', $string) . "<br />";
+        $hash .= " sha256: " . hash('sha256', $string) . "<br />";
+        $hash .= " sha384: " . hash('sha384', $string) . "<br />";
         $hash .= " sha512: " . hash('sha512', $string);
     
         return $hash;
