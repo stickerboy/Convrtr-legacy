@@ -4,6 +4,9 @@ $template->assign_vars(array(
     'L_BASE64'			    => 'Base 64',
     'L_BACKTOTOP'			=> 'Back to top',
     'L_BINARY'              => 'Binary',
+    'L_CHECKF'              => 'Check Files',
+    'L_CHECK_FILES'         => 'Upload a file to examine its file type / header',
+    'L_CHECK_EXP'           => 'Only the first 32 bytes of each file is read and then discarded. No uploaded files are actually stored anywhere on this server.',
     'L_DECODE'				=> 'Decode',
     'L_DEC'                 => 'Dec / Char',
     'L_DEF_DELIMITER_DASH'  => 'Default is a dash',
@@ -43,6 +46,7 @@ $template->assign_vars(array(
     'L_WORDS'               => 'Word Counter / Frequencies',
     
     'L_BMP'                 => 'BMP',
+    'L_DOC'                 => 'Office Application Document',
     'L_GIF'                 => 'Gif',
     'L_GIF_87A'             => '(87a)',
     'L_GIF_89A'             => '(89a)',
@@ -58,6 +62,7 @@ $template->assign_vars(array(
     'L_ZIP'                 => 'Zip/Compressed',
     
     'L_BYTES_BMP'           => '42 4D',
+    'L_BYTES_DOC'           => 'D0 CF 11 E0   A1 B1 1A E1',
     'L_BYTES_GIF87'         => '47 49 46 38   37 61',
     'L_BYTES_GIF89'         => '47 49 46 38   39 61',
     'L_BYTES_MID'           => '4D 54 68 64   00 00 00 06',
