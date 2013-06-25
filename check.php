@@ -39,8 +39,8 @@ if($check) {
         $errors[] = "There was no file uploaded - please make sure you added a file!";
     }
 
-    $tmpFile = fopen($_FILES["tmpFile"]["tmp_name"], "rb");
-    fclose($tmpFile);
+    $tmpFile = @fopen($_FILES["tmpFile"]["tmp_name"], "rb");
+    @fclose($tmpFile);
     if($tmpFile) {
 
         $tmpF = fopen($_FILES["tmpFile"]["tmp_name"], "rb");
@@ -64,7 +64,6 @@ if($check) {
     }
     else {
         $count = 0;
-        print_r($errors);
         // Loop through all our error messages and add them into a block
         // This block can then be passed to the template and styled
         // More information available here - http://wiki.phpbb.com/Tutorial.Template_syntax#Blocks
