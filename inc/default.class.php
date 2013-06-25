@@ -415,10 +415,13 @@ class Convrtr {
             $header = "BMP";
         }
         else if(substr($string, 0, 23) == 'D0 CF 11 E0 A1 B1 1A E1') {
-            $header = "DB, DOC, DOT, PPS, PPT, XLA, XLS, VSD, WIZ, WPS";
+            $header = "DB, DOC, DOT, PPS, PPT, XLS, VSD, WPS";
         }
         else if(substr($string, 0, 2) == '78') {
             $header = "DMG";
+        }
+        else if(substr($string, 0, 5) == '4D 5A') {
+            $header = "DLL, EXE, PIF, SCR, SYS";
         }
         else if(substr($string, 0, 14) == '49 44 33 03 37' || substr($string, 0, 14) == '49 44 33 03 39') {
             $header = "GIF";
@@ -432,13 +435,13 @@ class Convrtr {
         else if(substr($string, 0, 11) == '49 44 33 03') {
             $header = "MP3";
         }
-        else if(substr($string, 0, 23) == '66 74 79 70 69 73 6F 6D' || substr($string, 0, 23) == '66 74 79 70   6D 70 34 32') {
+        else if(substr($string, 0, 23) == '66 74 79 70 69 73 6F 6D' || substr($string, 0, 23) == '66 74 79 70 6D 70 34 32') {
             $header = "MP4";
         }
         else if(substr($string, 0, 11) == '25 50 44 46') {
             $header = "PDF";
         }
-        else if(substr($string, 0, 11) == '89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52') {
+        else if(trim($string) == '89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52') {
             $header = "PNG";
         }
         else if(substr($string, 0, 17) == '38 42 50 53 00 01') {

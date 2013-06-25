@@ -47,6 +47,7 @@ $template->assign_vars(array(
     
     'L_BMP'                 => 'BMP',
     'L_DOC'                 => 'Office Application Document',
+    'L_EXE'                 => 'Windows Executable',
     'L_GIF'                 => 'Gif',
     'L_GIF_87A'             => '(87a)',
     'L_GIF_89A'             => '(89a)',
@@ -63,6 +64,7 @@ $template->assign_vars(array(
     
     'L_BYTES_BMP'           => '42 4D',
     'L_BYTES_DOC'           => 'D0 CF 11 E0   A1 B1 1A E1',
+    'L_BYTES_EXE'           => '4D 5A',
     'L_BYTES_GIF87'         => '47 49 46 38   37 61',
     'L_BYTES_GIF89'         => '47 49 46 38   39 61',
     'L_BYTES_MID'           => '4D 54 68 64   00 00 00 06',

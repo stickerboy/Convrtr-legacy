@@ -44,7 +44,7 @@ if($check) {
     if($tmpFile) {
 
         $tmpF = fopen($_FILES["tmpFile"]["tmp_name"], "rb");
-        $data = fread($tmpF, 32); // grabbing the 1st 32 bytes
+        $data = fread($tmpF, 16); // grabbing the 1st 16 bytes
         fclose($tmpF);
         
         $file_hex       = $Convrtr->strToHex($data);
