@@ -29,6 +29,8 @@ $mor_decode	= (isset($_POST['mor_decode'])) ? true : false;
 $url_decode	= (isset($_POST['url_decode'])) ? true : false;
 $msy_decode	= (isset($_POST['msy_decode'])) ? true : false;
 
+$text = $bin = $hex = $b64 = $dec = $rev = $mor = $url = $msy = $hash = '';
+
 $section	= 'Home';
 
 if($encode) 		{ include($root_path . 'inc/decoders/text.php'); }
@@ -116,14 +118,6 @@ if (isset($_GET['hash_download'])) {
    echo $_SESSION['hash'];
    exit;
 }
-
-// Wipe sessions
-if (isset($_POST['clss'])) {
-	unset($_SESSION);
-	session_destroy(); 
-}
-
-//$stckr->Debug($_SESSION); // debug
 
 page_header($section);
 

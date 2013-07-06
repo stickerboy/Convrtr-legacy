@@ -20,7 +20,7 @@ include_once($root_path . 'inc/language.php');
 $page 		= "{$root_path}words.php";
 $mode 		= (isset($_GET['m'])) ? (string) $_GET['m'] : '';
 $encode		= (isset($_POST['encode'])) ? true : false;
-
+$word_freqs = $str = '';
 $section	= 'Words';
 
 if($encode) 		{ include($root_path . 'inc/decoders/words.php'); }
@@ -38,20 +38,12 @@ if (isset($_GET['words_download'])) {
    exit;
 }
 
-// Wipe sessions
-if (isset($_POST['clss'])) {
-	unset($_SESSION);
-	session_destroy(); 
-}
-
-//$stckr->Debug($_SESSION); // debug
-
 page_header($section);
 
 $template->assign_vars(array( 
 	'ROOT_PATH'    => $root_path,
 	
-	'ORIG_WORDS'   => stripslashes($_REQUEST['words']),
+	'ORIG_WORDS'   => (isset($_REQUEST['words'])) ? stripslashes($_REQUEST['words']) : '',
 	'POST_WORDS'   => stripslashes($word_freqs),
 ));
 

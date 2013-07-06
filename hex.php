@@ -20,7 +20,7 @@ include_once($root_path . 'inc/language.php');
 $page 		= "{$root_path}hex.php";
 $mode 		= (isset($_GET['m'])) ? (string) $_GET['m'] : '';
 $encode		= (isset($_POST['encode'])) ? true : false;
-
+$hexpattern = $hex_pattern = '';
 $section	= 'Hex';
 
 if($encode) 		{ include($root_path . 'inc/decoders/hexpattern.php'); }
@@ -38,18 +38,12 @@ if (isset($_GET['hex_download'])) {
    exit;
 }
 
-// Wipe sessions
-if (isset($_POST['clss'])) {
-	unset($_SESSION);
-	session_destroy(); 
-}
-
 page_header($section);
 
 $template->assign_vars(array( 
 	'ROOT_PATH'    => $root_path,
-	
-	'ORIG_HEX'     => stripslashes($_REQUEST['hexpattern']),
+
+	'ORIG_HEX'     => (isset($_REQUEST['hexpattern'])) ? stripslashes($_REQUEST['hexpattern']) : '',
 	'POST_HEX'     => stripslashes($hex_pattern),
 ));
 

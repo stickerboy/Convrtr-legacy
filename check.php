@@ -17,7 +17,7 @@ $template 	= new Template(); // Needs to be done on every page we are setting up
 $template->set_custom_template($root_path . 'theme/html', 'default');  // This is important as it states where the template files are located
 include_once($root_path . 'inc/language.php');
 
-$page 		= "{$root_path}upload.php";
+$page 		= "{$root_path}check.php";
 $mode 		= (isset($_GET['m'])) ? (string) $_GET['m'] : '';
 $check		= (isset($_POST['check'])) ? true : false;
 
@@ -27,33 +27,40 @@ foreach ($_SESSION as $key => $value) {
 	$_SESSION[$key] = stripslashes($value);
 }
 
-// Wipe sessions
-if (isset($_POST['clss'])) {
-	unset($_SESSION);
-	session_destroy(); 
+$errors 	= array(); // Set up an array to catch errors
+
+/**
+ * Handling this error outside _POST due to:
+ * "If the size of post data is greater than post_max_size, the $_POST and $_FILES superglobals are empty."
+ * http://stackoverflow.com/a/3543239 / http://stackoverflow.com/a/11745361
+ *
+ * No apparent way to handle this inside $check =/
+ */
+if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST) && empty($_FILES) && $_SERVER['CONTENT_LENGTH'] > 0) {
+    $c = 0; $errors[] = $Convrtr->uploadError(UPLOAD_ERR_INI_SIZE);
+    foreach($errors as $error) {
+        $errors[$c]['message_text'] = $error;
+        $template->assign_block_vars('errors', array(
+            'ERROR_TXT' => $error,
+        ));
+        $c++;
+    }    
 }
 
-$errors 	= array(); // Set up an array to catch errors
-if($check) {    
-    if (empty($_FILES["tmpFile"]) || $_FILES["tmpFile"]["size"] == 0) {
-        $errors[] = "There was no file uploaded - please make sure you added a file!";
+if($check) {
+
+    if ($_FILES["tmpFile"]["error"] != 0) {
+        $errors[] = $Convrtr->uploadError($_FILES["tmpFile"]["error"]); 
     }
 
-    $tmpFile = @fopen($_FILES["tmpFile"]["tmp_name"], "rb");
-    @fclose($tmpFile);
-    if($tmpFile) {
-
+    if(!sizeof($errors)) {
         $tmpF = fopen($_FILES["tmpFile"]["tmp_name"], "rb");
         $data = fread($tmpF, 16); // grabbing the 1st 16 bytes
         fclose($tmpF);
         
         $file_hex       = $Convrtr->strToHex($data);
         $file_header    = $Convrtr->identifyHeader($file_hex);
-    }
-    else {
-        $errors[] = 'Unable to open the file';
-    }
-    if(!sizeof($errors)) {
+
         $mesg = "File upload was successful<br /><br />"; 
         $mesg .= "File header (first 32 bytes): " . $file_hex . "<br />"; 
         $mesg .= "Your file was identified as '" . $file_header . "'"; 
@@ -67,8 +74,7 @@ if($check) {
         // Loop through all our error messages and add them into a block
         // This block can then be passed to the template and styled
         // More information available here - http://wiki.phpbb.com/Tutorial.Template_syntax#Blocks
-        foreach($errors as $error)
-        {
+        foreach($errors as $error) {
             $errors[$count]['message_text'] = $error;
             $template->assign_block_vars('errors', array(
                 'ERROR_TXT' => $error,

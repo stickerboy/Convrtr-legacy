@@ -23,6 +23,6 @@ $base64 	= $_SESSION['base64'] 	= $b64;
 $decimal 	= $_SESSION['decimal'] 	= $dec;
 $reverse 	= $_SESSION['reverse'] 	= $rev;
 $morse 		= $_SESSION['morse'] 	= $mor;
-$urlenc 	= $_SESSION['url_enc'] 	= $dec;
+$urlenc 	= $_SESSION['url_enc'] 	= $url;
 $morsenary 	= $_SESSION['morsenary']= $msy;
 $hashes 	= $_SESSION['hash'] 	= $hash;

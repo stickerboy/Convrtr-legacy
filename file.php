@@ -26,12 +26,6 @@ foreach ($_SESSION as $key => $value) {
 	$_SESSION[$key] = stripslashes($value);
 }
 
-// Wipe sessions
-if (isset($_POST['clss'])) {
-	unset($_SESSION);
-	session_destroy(); 
-}
-
 page_header($section);
 
 $template->assign_vars(array( 
