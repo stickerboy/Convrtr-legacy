@@ -1,7 +1,7 @@
 <?php
 /**
 *
-* @package stickr framework (based on phpBB)
+* @package stckr framework (based on phpBB)
 * @version $Id: check.php 
 * @copyright (c) 2013 Kenny Cameron
 * Developed using the phpBB template engine
