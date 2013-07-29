@@ -1,7 +1,7 @@
 <?php
 /**
 *
-* @package stickr framework (based on phpBB)
+* @package stckr framework (based on phpBB)
 * @version $Id: hex.php 
 * @copyright (c) 2013 Kenny Cameron
 * Developed using the phpBB template engine
@@ -34,7 +34,7 @@ if (isset($_GET['hex_download'])) {
    header("Content-type: text/plain");
    header("Content-Disposition: attachment; filename=HexPattern");
    header("Content-Description: Convrts Data");
-   echo $_SESSION['words'];
+   echo $_SESSION['hexpattern'];
    exit;
 }
 
