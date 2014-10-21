@@ -1,0 +1,39 @@
+<!-- INCLUDE header.html -->
+    <div class="container marketing" id="top">
+        <div class="row">
+    		<div class="span12 convrt-box pad" id="text">
+    			<div class="code-title">
+                    {L_ROT_COMMON}
+    			</div><br/>
+    			<form action="{U_ROT}" method="post" class="form-horizontal">
+                    <div class="control-group">
+                        <div class="control">
+                            <textarea name="rottext" rows="5" class="span12 rottext">{ORIG_ROT}</textarea>
+                        </div>
+                        <!-- INCLUDE rot_alpha_body.html -->
+                    </div>                   
+    			</form>
+    		</div> 
+        </div>
+        <div class="row">            
+			<div class="span12 well convrt-box hidden">
+    			<div class="code-title">
+    				{L_RESULTS}
+    			</div><br />
+                <div>                   
+                    <div class="control-group">
+                        <div class="btn-toolbar">   				
+                            <form id="download" method="post" action="?download">
+                                <button type="submit" class="btn btn-inverse disabled download" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></button>
+                                <a class="btn btn-inverse disabled" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
+                                <textarea name="rotdl" rows="0" class="rotdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
+                            </form>
+                        </div>                         
+                        <div class="controls">
+                            <pre class="prettyprint rotresult">{POST_ROT}</pre>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+<!-- INCLUDE footer.html -->

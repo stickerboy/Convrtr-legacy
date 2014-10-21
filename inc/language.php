@@ -35,6 +35,8 @@ $template->assign_vars(array(
     'L_PATTERNS'            => 'Patterns',
     'L_RESULTS'             => 'Results',
     'L_REVERSE'             => 'Reverse',
+    'L_ROT'                 => 'ROT Text',
+    'L_ROT_COMMON'          => 'ROT Text',
     'L_RUN'                 => 'Run',
     'L_SELECT_TEXT'			=> 'Select text',
     'L_SIZE'				=> 'Size',

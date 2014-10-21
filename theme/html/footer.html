@@ -19,6 +19,25 @@
     <script src="{JS_PATH}pretify.js"></script>
     <script src="{JS_PATH}switch.js"></script>
     <script src="{JS_PATH}stuff.js"></script>
+    <!-- IF FILE_NAME eq 'rot' -->
+    <script src="{JS_PATH}rot.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $(".rotlink").click(function(e) {
+                e.preventDefault;
+                var rotstring = $(".rottext").val();
+                if (rotstring != '') {
+                    $(".alpha").removeClass("active");
+                    $(".convrt-box").removeClass("hidden");
+                    $(this).parent("li").addClass("active");
+                    var rotnumber = $(this).attr('id').replace('rot', '');
+                    $(".rotresult").html(rot(rotstring, parseInt(rotnumber)));
+                    $(".rotdl").val(rot(rotstring, parseInt(rotnumber)));
+                }
+            });
+        });
+    </script>
+    <!-- ENDIF -->
     <script>
         $('[rel="tooltip"]').tooltip();
         
