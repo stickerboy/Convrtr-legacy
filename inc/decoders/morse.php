@@ -1,6 +1,6 @@
 <?php
 /* 
- * Morse
+ * orse
  */
 
 $morse = $_SESSION['morse'] = $_REQUEST['morse'];	
