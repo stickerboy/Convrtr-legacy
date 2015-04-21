@@ -1,6 +1,6 @@
 <?php
 /* 
- * orse
+ * Morse
  */
 
 $morse = $_SESSION['morse'] = $_REQUEST['morse'];	
@@ -19,9 +19,9 @@ if(!empty($morse)) {
 	$hash		= $Convrtr->returnHash($str);
 }
 
-$text 		= $_SESSION['text']		= $str;
+$text 		= $_SESSION['text']	= $str;
 $binary 	= $_SESSION['binary'] 	= $bin;
-$hexa 		= $_SESSION['hex'] 		= $hex;
+$hexa 		= $_SESSION['hex'] 	= $hex;
 $base64 	= $_SESSION['base64'] 	= $b64;
 $decimal 	= $_SESSION['decimal'] 	= $dec;
 $reverse 	= $_SESSION['reverse'] 	= $rev;
