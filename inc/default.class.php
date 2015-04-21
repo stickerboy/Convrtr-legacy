@@ -413,6 +413,18 @@ class Convrtr {
         return $data;
     }
 
+
+    /**
+    * ROTn text
+    * http://stackoverflow.com/a/2423852
+    *
+    * returns rotated text
+    */
+    function rotText($str, $len) {
+        $len = $len % strlen($str);
+        return substr($str, $len) . substr($str, 0, $len);
+    } 
+
     /** 
      * Idenfity file headers based on hex
      * $string - hex values taken from uploaded file
