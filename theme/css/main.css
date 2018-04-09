@@ -4,16 +4,9 @@
 /* Padding below the footer and lighter body text */
 
 body {
-    padding-bottom: 40px;
+    padding-bottom: 4rem;
+    margin-top: 6rem;
     color: #5a5a5a;
-}
-
-.convrt-box {
-    position: relative;
-    margin-bottom: 15px;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    margin-right: -2px;
 }
 .code-title {
     background-color: #F5F5F5;
@@ -28,59 +21,17 @@ body {
     top: -1px;
 }
 .convrt-box textarea {
-    margin-top: 30px;
+    margin-top: 3rem;
     width: 90%;
     background-color: #f7f7f7;
 }
 .convrt-box.pad {
     padding: 2px 20px;
 }
-.btn.disabled, .btn[disabled] {
-    cursor: pointer;
-}
 
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .span4 {
-    text-align: center;
-}
-.marketing h2 {
-    font-weight: normal;
-}
-.marketing .span4 p {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.container.marketing {
-    padding-top: 80px;
-}
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (max-width: 979px) {
-
-    .container.marketing {
-        padding-top: 30px;
-    }
-}
-
-@media (max-width: 767px) {
-
-    .marketing .span4 + .span4 {
-        margin-top: 40px;
-    }
-    
-    .container.marketing {
-        padding-top: 30px;
-    }
-}
-
-.convrt-box .form-horizontal .control-label {
-    width:114px;
-}
-.convrt-box .form-horizontal .controls {
-    margin-left: 120px;
+pre.prettyprint {
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    font-size: 0.9rem;
 }
