@@ -1,3 +1,18 @@
+$(document).ready(function() {
+	$(".rotlink").click(function(e) {
+		e.preventDefault;
+		var rotstring = $(".rottext").val();
+		if (rotstring != '') {
+			$(".alpha").removeClass("active");
+			$(".row").removeClass("d-none");
+			$(this).parent("li").addClass("active");
+			var rotnumber = $(this).attr('id').replace('rot', '');
+			$(".rotresult").html(rot(rotstring, parseInt(rotnumber)));
+			$(".rotdl").val(rot(rotstring, parseInt(rotnumber)));
+		}
+	});
+});
+
 /*! http://mths.be/rot v0.1.0 by @mathias | MIT license */
 ;(function(root) {
 

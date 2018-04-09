@@ -22,7 +22,10 @@
 	<script src="{JS_PATH}pretify.js"></script>
 	<script src="{JS_PATH}stuff.js"></script>
 	<!-- IF FILE_NAME eq 'rot' -->
-	<!-- INCLUDE partials/rot_js_body.html -->
+	<script src="{JS_PATH}rot.js"></script>
+	<!-- ENDIF -->
+	<!-- IF FILE_NAME eq 'flip' -->
+	<script src="{JS_PATH}flip.js"></script>
 	<!-- ENDIF -->
 	<script>
 		$('[rel="tooltip"]').tooltip();
