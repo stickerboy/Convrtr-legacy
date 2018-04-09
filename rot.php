@@ -3,7 +3,7 @@
 *
 * @package stckr framework (based on phpBB)
 * @version $Id: rot.php
-* @copyright (c) 2013 Kenny Cameron
+* @copyright (c) 2018 Kenny Cameron
 * Developed using the phpBB template engine
 *
 */
