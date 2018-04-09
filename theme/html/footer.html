@@ -31,7 +31,7 @@
 				var rotstring = $(".rottext").val();
 				if (rotstring != '') {
 					$(".alpha").removeClass("active");
-					$(".convrt-box").removeClass("hidden");
+					$(".row").removeClass("d-none");
 					$(this).parent("li").addClass("active");
 					var rotnumber = $(this).attr('id').replace('rot', '');
 					$(".rotresult").html(rot(rotstring, parseInt(rotnumber)));

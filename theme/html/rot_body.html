@@ -16,8 +16,8 @@
             </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col well convrt-box hidden">
+    <div class="row mt-4 d-none">
+        <div class="col">
             <div class="card">
                 <h5 class="card-header">
                     {L_RESULTS}
@@ -26,8 +26,14 @@
                     <div class="form-group">
                         <div class="btn-toolbar">
                             <form id="download" method="post" action="?download">
-                                <button type="submit" class="btn btn-inverse disabled download" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></button>
-                                <a class="btn btn-inverse disabled" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
+                                <div class="control-group mb-2">
+                                    <button type="submit" class="btn btn-secondary download" rel="tooltip" title="{L_DOWNLOAD}">
+                                        <i class="fa fa-download"></i>
+                                    </button>
+                                    <a href="#" class="btn btn-secondary" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}">
+                                        <i class="fa fa-expand-arrows-alt"></i>
+                                    </a>
+                                </div>
                                 <textarea name="rotdl" rows="0" class="rotdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
                             </form>
                         </div>
