@@ -1,0 +1,66 @@
+<!-- INCLUDE header.html -->
+    <div class="row">
+        <div class="col pad" id="text">
+            <div class="card">
+                <h5 class="card-header">
+                    {L_FLIP_COMMON}
+                </h5>
+                <div class="card-body">
+                    <form action="{U_ROT}" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <textarea name="rottext" rows="5" class="form-control rottext">{ORIG_FLIP}</textarea>
+                        </div>
+                        <div class="control-group">
+							<div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <button type="button" name="flip" class="btn btn-info"><i class="fa fa-angle-right"></i> {L_FLIP}</button>
+                                </div>
+								<div class="btn-group">
+									<label class="control-label ml-5 mr-2 mt-2" for="flip_text"> {L_TOGGLE_FLIP}</label>
+									<div class="toggle-container mt-2">
+										<div class="toggle -small js-toggle">
+											<input type="checkbox" name="flip_text" id="flip_text" class="check" role="checkbox" aria-checked="false" tabindex="0" value="false">
+											<div class="background">
+												<div class="focus"></div>
+												<div class="thumb"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 d-none">
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">
+                    {L_RESULTS}
+                </h5>
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="btn-toolbar">
+                            <form id="download" method="post" action="?download">
+                                <div class="control-group mb-2">
+                                    <button type="submit" class="btn btn-secondary download" rel="tooltip" title="{L_DOWNLOAD}">
+                                        <i class="fa fa-download"></i>
+                                    </button>
+                                    <a href="#" class="btn btn-secondary" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}">
+                                        <i class="fa fa-expand-arrows-alt"></i>
+                                    </a>
+                                </div>
+                                <textarea name="rotdl" rows="0" class="rotdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
+                            </form>
+                        </div>
+                        <div class="controls">
+                            <pre class="prettyprint rotresult">{POST_ROT}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- INCLUDE footer.html -->

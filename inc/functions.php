@@ -74,13 +74,14 @@ function page_header($page_title = '')
 		'U_HEX'					=> "{$root_path}hex.php",
 		'U_FILE'				=> "{$root_path}file.php",
 		'U_CHECK'				=> "{$root_path}check.php",
-		'U_ROT'				 	=> "{$root_path}rot.php",
+		'U_ROT'					=> "{$root_path}rot.php",
+		'U_FLIP'				=> "{$root_path}flip.php",
 		'U_PAGE'				=> "{$root_path}". basename($_SERVER['PHP_SELF']),
 		'U_ABOUT'				=> "#about",
 
 		'S_ERROR' 				=> (isset($_SESSION['errors'])) ? true : false,
 		'S_HIDDEN'				=> false,
-		'S_OFFLINE'			 	=> $offline,
+		'S_OFFLINE'				=> $offline,
 		'DEBUG_INFO'			=> debug_info(),
 	));
 	unset($_SESSION['errors']);
