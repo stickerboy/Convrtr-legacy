@@ -1,0 +1,17 @@
+<script src="{JS_PATH}rot.js"></script>
+<script>
+	$( document ).ready(function() {
+		$(".rotlink").click(function(e) {
+			e.preventDefault;
+			var rotstring = $(".rottext").val();
+			if (rotstring != '') {
+				$(".alpha").removeClass("active");
+				$(".row").removeClass("d-none");
+				$(this).parent("li").addClass("active");
+				var rotnumber = $(this).attr('id').replace('rot', '');
+				$(".rotresult").html(rot(rotstring, parseInt(rotnumber)));
+				$(".rotdl").val(rot(rotstring, parseInt(rotnumber)));
+			}
+		});
+	});
+</script>
