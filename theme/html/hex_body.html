@@ -12,17 +12,21 @@
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-								<button type="submit" name="encode" class="btn btn-success"><i class="fa fa-angle-right"></i> {L_RUN}</button>
+								<button type="submit" name="encode" class="btn btn-info"><i class="fa fa-angle-right"></i> {L_RUN}</button>
 							</div>
 							<input type="text" name="delimiter" class="form-control" placeholder="{L_DELIMITER} ({L_DEF_DELIMITER_EMPTY})" aria-label="" aria-describedby="{L_DELIMITER}" />
 						</div>
 						<div class="control-group">
 							<div class="btn-toolbar">
 								<div class="btn-group">
-									<label class="control-label" for="case_sensitive" style="margin-top:3px;"> {L_TOGGLE_CASE}</label>
-									<div class="controls">
-										<div class="switch switch-small" data-on="success" data-off="danger" data-on-label="{L_ON}" data-off-label="{L_OFF}">
-											<input type="checkbox" name="case_sensitive" id="case_sensitive">
+									<label class="control-label mr-2" for="case_sensitive"> {L_TOGGLE_CASE}</label>
+									<div class="toggle-container">
+										<div class="toggle -small js-toggle">
+											<input type="checkbox" name="case_sensitive" id="case_sensitive" class="check" role="checkbox" aria-checked="false" tabindex="0" value="false">
+											<div class="background">
+												<div class="focus"></div>
+												<div class="thumb"></div>
+											</div>
 										</div>
 									</div>
 								</div>
