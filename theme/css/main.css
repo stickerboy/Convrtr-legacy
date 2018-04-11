@@ -4,36 +4,40 @@
 /* Padding below the footer and lighter body text */
 
 body {
-    padding-bottom: 4rem;
-    margin-top: 6rem;
-    color: #5a5a5a;
+	padding-bottom: 4rem;
+	margin-top: 6rem;
+	color: #5a5a5a;
 }
 .code-title {
-    background-color: #F5F5F5;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px 0px 4px 0px;
-    color: #585858;
-    font-size: 12px;
-    font-weight: bold;
-    left: -1px;
-    padding: 3px 7px;
-    position: absolute;
-    top: -1px;
+	background-color: #F5F5F5;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0px 4px 0px;
+	color: #585858;
+	font-size: 12px;
+	font-weight: bold;
+	left: -1px;
+	padding: 3px 7px;
+	position: absolute;
+	top: -1px;
 }
 .convrt-box textarea {
-    margin-top: 3rem;
-    width: 90%;
-    background-color: #f7f7f7;
+	margin-top: 3rem;
+	width: 90%;
+	background-color: #f7f7f7;
 }
 .convrt-box.pad {
-    padding: 2px 20px;
+	padding: 2px 20px;
 }
 
 pre.prettyprint {
-    overflow: hidden;
-    white-space: normal;
-    word-break: break-all;
+	font-size: 0.9rem;
+}
+pre.prettyprint.wrap {
+    overflow: initial;
+    white-space: initial;
+    word-break: initial;
     font-size: 0.9rem;
+}
 
 .navbar .nav-link {
 	padding: 1.25rem;

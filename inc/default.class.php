@@ -282,23 +282,23 @@ class Convrtr {
 	 */
 	function charCounts($string, $uc = false) {
 		$strip_space	= str_replace(' ', '', $string);
-		$counts		 = '';
-		$counts		 .= "Word &amp; Characters Counter / Frequencies\r\n----------------------------------------\r\n";
+		$counts			= '';
+		$counts			.= "Word &amp; Characters Counter / Frequencies\r\n----------------------------------------\r\n";
 
-		$chars		  = strlen($string);
-		$chars_nospace  = strlen($strip_space);
-		$size		   = $this->formatSize(strlen($string)); //mb_strlen, '8bit')
+		$chars			= strlen($string);
+		$chars_nospace	= strlen($strip_space);
+		$size			= $this->formatSize(strlen($string)); //mb_strlen, '8bit')
 
-		$counts .="Characters (spaces)	 = $chars\r\nCharacters (no spaces)  = $chars_nospace\r\nFilesize				= $size\r\n";
+		$counts .="Characters (spaces) \t = $chars\r\nCharacters (no spaces) \t = $chars_nospace\r\nFilesize \t\t = $size\r\n";
 
-		$count_space		= preg_replace('[^\s]', '', $string);
-		$spaces			 = substr_count($count_space, ' ');
-		$counts			 .= "Whitespace count		= $spaces\r\n";
+		$count_space	= preg_replace('[^\s]', '', $string);
+		$spaces			= substr_count($count_space, ' ');
+		$counts			.= "Whitespace count \t = $spaces\r\n";
 
 		if($uc) {
-			$unique_chars	   = count_chars($strip_space, 3);
+			$unique_chars	= count_chars($strip_space, 3);
 			$unique_chars_count = strlen($unique_chars);
-			$counts .= "Unique Characters	   = ($unique_chars_count) $unique_chars\r\n";
+			$counts .= "Unique Characters \t = ($unique_chars_count) $unique_chars\r\n";
 		}
 
 		return $counts;
@@ -321,34 +321,34 @@ class Convrtr {
 			}
 		}
 
-		$data = $word_freqs = '';
-		$data .= $this->charCounts($string, true);
+		$data		= $word_freqs = '';
+		$data		.= $this->charCounts($string, true);
 
-		$wordlist   = explode(" ", $string);
-		$result	 = @array_combine($wordlist, array_fill(0, count(asort($wordlist)), 0));
+		$wordlist 	= explode(" ", $string);
+		$result		= @array_combine($wordlist, array_fill(0, count(asort($wordlist)), 0));
 
 		foreach($wordlist as $word) {
 			$result[$word]++;
 		}
 		$unique_word_count = count($result);
 
-		$data .= "Unique words			= $unique_word_count\r\n";
+		$data .= "Unique words \t\t = $unique_word_count\r\n";
 		foreach($result as $word => $count) {
 			$word_freqs .= "$word ($count)\n";
 		}
 		$data .= "\nWord Frequencies:\r\n------------------\r\n$word_freqs\r\n";
 
 		if ($delimiter) {
-			$whitespace_ary		 = explode($delimiter, $string);
-			$whitespace_ary_unique  = array_count_values($whitespace_ary);
+			$whitespace_ary		= explode($delimiter, $string);
+			$whitespace_ary_unique = array_count_values($whitespace_ary);
 
 			ksort($whitespace_ary_unique);
-			$data				  .= "Delimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r";
+			$data				.= "Delimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r";
 
 			foreach($whitespace_ary_unique as $key => $value) {
-				$space  = strspn($value, " \t\r\n\0\x0B");
+				$space	= strspn($value, " \t\r\n\0\x0B");
 				$len	= strlen($key);
-				$data .= "\n$value instance(s) of $len leading characters - '$key'\r";
+				$data	.= "\n$value instance(s) of $len leading characters - '$key'\r";
 			}
 		}
 
@@ -376,11 +376,11 @@ class Convrtr {
 		$data .= $this->charCounts($string);
 
 		if ($delimiter) {
-			$whitespace_ary		 = explode($delimiter, $string);
-			$whitespace_ary_unique  = array_count_values($whitespace_ary);
+			$whitespace_ary		= explode($delimiter, $string);
+			$whitespace_ary_unique = array_count_values($whitespace_ary);
 
 			ksort($whitespace_ary_unique);
-			$data				  .= "\nDelimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r\n";
+			$data				.= "\nDelimiter: '$delimiter'\r\n\nCharacter Frequencies\r----------------------\r\n";
 
 			foreach($whitespace_ary_unique as $key => $value) {
 				$data .= "\n Val: '$key'	Freq: $value\r";

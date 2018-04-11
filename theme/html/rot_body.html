@@ -1,48 +1,46 @@
 <!-- INCLUDE header.html -->
-    <div class="row">
-        <div class="col pad" id="text">
-            <div class="card">
-                <h5 class="card-header">
-                    {L_ROT_COMMON}
-                </h5>
-                <div class="card-body">
-                    <form action="{U_ROT}" method="post" class="form-horizontal">
-                        <div class="form-group">
-                            <textarea name="rottext" rows="5" class="form-control rottext">{ORIG_ROT}</textarea>
-                            <!-- INCLUDE partials/alpha_body.html -->
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-4 d-none">
-        <div class="col">
-            <div class="card">
-                <h5 class="card-header">
-                    {L_RESULTS}
-                </h5>
-                <div class="card-body">
-                    <div class="form-group">
-                        <div class="btn-toolbar">
-                            <form id="download" method="post" action="?download">
-                                <div class="control-group mb-2">
-                                    <button type="submit" class="btn btn-secondary download" rel="tooltip" title="{L_DOWNLOAD}">
-                                        <i class="fa fa-download"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-secondary" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}">
-                                        <i class="fa fa-expand-arrows-alt"></i>
-                                    </a>
-                                </div>
-                                <textarea name="rotdl" rows="0" class="rotdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
-                            </form>
-                        </div>
-                        <div class="controls">
-                            <pre class="prettyprint rotresult">{POST_ROT}</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col pad" id="text">
+			<div class="card">
+				<h5 class="card-header">
+					{L_ROT_COMMON}
+				</h5>
+				<div class="card-body">
+					<form action="{U_ROT}" method="post" class="form-horizontal">
+						<div class="form-group">
+							<textarea name="rottext" rows="5" class="form-control rottext">{ORIG_ROT}</textarea>
+							<!-- INCLUDE partials/alpha_body.html -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4 d-none">
+		<div class="col">
+			<div class="card">
+				<h5 class="card-header">
+					{L_RESULTS}
+				</h5>
+				<div class="card-body">
+					<div class="form-group">
+						<div class="btn-toolbar">
+							<form id="download" method="post" action="?download">
+								<div class="form-group mb-2">
+									<button type="submit" class="btn btn-secondary download" rel="tooltip" title="{L_DOWNLOAD}">
+										<i class="fa fa-download"></i>
+									</button>
+									<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+										<i class="fa fa-copy"></i>
+									</a>
+								</div>
+								<textarea name="rotdl" rows="0" class="rotdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
+							</form>
+						</div>
+						<pre class="prettyprint rotresult wrap data-to-copy">{POST_ROT}</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <!-- INCLUDE footer.html -->

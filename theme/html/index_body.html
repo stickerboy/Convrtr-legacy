@@ -8,20 +8,20 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="text" rows="9" class="form-control">{POST_TEXT}</textarea>
+							<textarea name="text" rows="9" class="form-control data-to-copy">{POST_TEXT}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Encode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_ENCODE}">
 								<button type="submit" name="encode" class="btn btn-info">
 									<i class="icon-white icon-chevron-right"></i> {L_ENCODE}
 								</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?text_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy" aria-hidden="true"></i>
 								</a>
 							</div>
 						</div>
@@ -38,18 +38,18 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="binary" rows="9" class="form-control">{POST_BINARY}</textarea>
+							<textarea name="binary" rows="9" class="form-control data-to-copy">{POST_BINARY}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="bin_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?binary_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
 								</a>
 							</div>
 						</div>
@@ -66,18 +66,18 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="hex" rows="9" class="form-control">{POST_HEX}</textarea>
+							<textarea name="hex" rows="9" class="form-control data-to-copy">{POST_HEX}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="hex_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?hex_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
 								</a>
 							</div>
 						</div>
@@ -93,15 +93,15 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="base64" rows="9" class="form-control">{POST_B64}</textarea>
+							<textarea name="base64" rows="9" class="form-control data-to-copy">{POST_B64}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="b64_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?b64_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}"><i class="fas fa-download" aria-hidden="true"></i></a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="fas fa-expand-arrows-alt"></i></a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}"><i class="fas fa-copy"></i></a>
 							</div>
 						</div>
 					</form>
@@ -116,18 +116,18 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="decimal" rows="9" class="form-control">{POST_DEC}</textarea>
+							<textarea name="decimal" rows="9" class="form-control data-to-copy">{POST_DEC}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="dec_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?dec_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
 								</a>
 							</div>
 						</div>
@@ -143,18 +143,18 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="reverse" rows="9" class="form-control">{POST_REV}</textarea>
+							<textarea name="reverse" rows="9" class="form-control data-to-copy">{POST_REV}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="rev_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?rev_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
 								</a>
 							</div>
 						</div>
@@ -170,18 +170,18 @@
 					<div class="card-body">
 						<form action="{U_HOME}" method="post">
 							<div class="form-group">
-								<textarea name="rot13decode" rows="9" class="form-control">{POST_ROT13}</textarea>
+								<textarea name="rot13decode" rows="9" class="form-control data-to-copy">{POST_ROT13}</textarea>
 							</div>
 							<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-								<div class="btn-group mr-2" role="group" aria-label="Decode">
+								<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 									<button type="submit" name="url_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 								</div>
-								<div class="btn-group" role="group" aria-label="Download and Select All">
+								<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 									<a href="{U_HOME}?url_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 										<i class="fas fa-download" aria-hidden="true"></i>
 									</a>
-									<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-										<i class="fas fa-expand-arrows-alt"></i>
+									<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+										<i class="fas fa-copy"></i>
 									</a>
 								</div>
 							</div>
@@ -197,18 +197,18 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="morse" rows="9" class="form-control">{POST_MORSE}</textarea>
+							<textarea name="morse" rows="9" class="form-control data-to-copy">{POST_MORSE}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="mor_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?morse_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
 								</a>
 							</div>
 						</div>
@@ -224,18 +224,18 @@
 				<div class="card-body">
 					<form action="{U_HOME}" method="post">
 						<div class="form-group">
-							<textarea name="morsenary" rows="9" class="form-control">{POST_MORSENARY}</textarea>
+							<textarea name="morsenary" rows="9" class="form-control data-to-copy">{POST_MORSENARY}</textarea>
 						</div>
 						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
-							<div class="btn-group mr-2" role="group" aria-label="Decode">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
 								<button type="submit" name="msy_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 							</div>
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?morsenary_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 									<i class="fas fa-download" aria-hidden="true"></i>
 								</a>
-								<a href="#" class="btn btn-secondary selectAll" rel="tooltip" title="{L_SELECT_TEXT}">
-									<i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy" aria-hidden="true"></i>
 								</a>
 							</div>
 						</div>
@@ -259,12 +259,12 @@
 					<div class="card-body">
 						<!-- IF POST_HASH -->
 						<div class="btn-toolbar mb-4" role="toolbar" aria-label="">
-							<div class="btn-group" role="group" aria-label="Download and Select All">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
 								<a href="{U_HOME}?hash_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}"><i class="fas fa-download" aria-hidden="true"></i></a>
-								<a href="#" class="btn btn-secondary" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}"><i class="fas fa-expand-arrows-alt"></i></a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}"><i class="fas fa-copy"></i></a>
 							</div>
 						</div>
-						<pre class="prettyprint linenums">{POST_HASH}</pre>
+						<pre class="prettyprint linenums wrap data-to-copy">{POST_HASH}</pre>
 						<!-- ENDIF -->
 						(<a href="http://en.wikipedia.org/wiki/Hash_function" class="text-info">{L_HASH} Info</a>)
 					</div>

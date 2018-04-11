@@ -30,7 +30,7 @@ foreach ($_SESSION as $key => $value) {
 }
 
 // Serve up downloads
-if (isset($_GET['words_download'])) {
+if (isset($_GET['wordsx_download'])) {
 	$fileData = str_replace('<br />','\n', $_SESSION['words']);
 	header("Content-type: text/plain");
 	header("Content-Disposition: attachment; filename=Words");

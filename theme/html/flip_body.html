@@ -10,7 +10,7 @@
 						<div class="form-group">
 							<textarea name="fliptext" rows="5" class="form-control fliptext">{ORIG_FLIP}</textarea>
 						</div>
-						<div class="control-group">
+						<div class="form-group">
 							<div class="btn-toolbar">
 								<div class="btn-group">
 									<button type="button" name="flip" class="btn btn-info js-flip-text"><i class="fa fa-angle-right"></i> {L_FLIP}</button>
@@ -43,21 +43,21 @@
 				<div class="card-body">
 					<div class="form-group">
 						<div class="btn-toolbar">
-							<form id="download" method="post" action="?download">
-								<div class="control-group mb-2">
-									<button type="submit" class="btn btn-secondary download" rel="tooltip" title="{L_DOWNLOAD}">
-										<i class="fa fa-download"></i>
-									</button>
-									<a href="#" class="btn btn-secondary" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}">
-										<i class="fa fa-expand-arrows-alt"></i>
-									</a>
-								</div>
-								<textarea name="flipdl" rows="0" class="flipdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
-							</form>
+							<div class="btn-toolbar">
+								<form id="download" method="post" action="?download">
+									<div class="btn-group mb-4" role="group" aria-label="{L_DOWNLOAD_COPY}">
+										<button type="submit" class="btn btn-secondary download" rel="tooltip" title="{L_DOWNLOAD}">
+											<i class="fa fa-download"></i>
+										</button>
+										<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+											<i class="fas fa-copy" aria-hidden="true"></i>
+										</a>
+									</div>
+								</form>
+								<textarea name="flip" rows="0" class="flipdl" style="width:0;height:0;margin:0;padding:0;border:none;"></textarea>
+							</div>
 						</div>
-						<div class="controls">
-							<pre class="prettyprint flipresult">{POST_FLIP}</pre>
-						</div>
+						<pre class="prettyprint wrap flipresult data-to-copy">{POST_FLIP}</pre>
 					</div>
 				</div>
 			</div>
