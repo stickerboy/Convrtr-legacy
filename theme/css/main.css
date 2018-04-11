@@ -34,4 +34,47 @@ pre.prettyprint {
     white-space: normal;
     word-break: break-all;
     font-size: 0.9rem;
+
+.navbar .nav-link {
+	padding: 1.25rem;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+	background-color: #17a2b8;
+	color: #fff;
+}
+.navbar-dark .navbar-nav .active  {
+	background-color: #19b1c9;
+}
+
+@media (min-width: 991.99px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media (max-width: 991.98px) {
+    .navbar .container {
+        padding: 0;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .navbar .collapse.show {
+        margin-top: 1rem;
+    }
+    .navbar .dropdown-menu.show {
+        border-radius: 0;
+        border: none;
+        background-color: #1593a7;
+    }
+    .navbar .dropdown-menu.show .dropdown-item {
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+    }
+    .navbar-text, .nav-clear-session {
+        margin-left: 1rem;
+    }
+}
 }
