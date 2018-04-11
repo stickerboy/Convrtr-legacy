@@ -4,7 +4,7 @@
 }
 .toggle-container > .toggle {
 	position: relative;
-	z-index: 9970;
+	z-index: 200;
 }
 .toggle-container > .toggle > .check {
 	position: absolute;
@@ -49,13 +49,13 @@
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
-.toggle-container > .toggle:hover .thumb, 
-.toggle-container > .toggle:active .thumb, 
+.toggle-container > .toggle:hover .thumb,
+.toggle-container > .toggle:active .thumb,
 .toggle-container > .toggle:focus .thumb {
 	box-shadow: 0 0 0.1rem 0.4rem rgba(64, 175, 167, 0.4);
 }
-.toggle-container > .toggle:hover input[type="checkbox"]:checked + .background > .thumb, 
-.toggle-container > .toggle:active input[type="checkbox"]:checked + .background > .thumb, 
+.toggle-container > .toggle:hover input[type="checkbox"]:checked + .background > .thumb,
+.toggle-container > .toggle:active input[type="checkbox"]:checked + .background > .thumb,
 .toggle-container > .toggle:focus input[type="checkbox"]:checked + .background > .thumb {
 	box-shadow: 0 0 0.1rem 0.4rem rgba(117, 117, 117, 0.25) !important;
 }
