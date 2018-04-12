@@ -12,4 +12,11 @@ $(document).ready(function() {
 		dataToCopy = (typeof text == 'undefined') ? text.val() : text.text();
 		copyToClipboard(dataToCopy, el);
 	});
+
+	$('#file-headers').on('change', function () {
+		if($('.alert-danger').length > 0) {
+			$('.alert-danger').slideUp();
+		}
+		$('.custom-file-label').text(this.value.replace(/.*[\/\\]/, ''));
+	});
 });
