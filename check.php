@@ -88,7 +88,7 @@ page_header($section);
 
 $template->assign_vars(array(
 	'ROOT_PATH'		=> $root_path,
-	'S_ERROR'		=> (isset($errors) && sizeof($errors)) ? true : false,
+	'S_FILE_ERROR'	=> (isset($errors) && sizeof($errors)) ? true : false,
 	'S_MESSAGE'		=> (isset($mesg)) ? $mesg : '',
 ));
 
