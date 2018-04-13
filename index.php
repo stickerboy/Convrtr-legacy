@@ -85,7 +85,7 @@ if (isset($_GET['dec_download'])) {
 }
 if (isset($_GET['rev_download'])) {
 	header("Content-type: text/plain");
-	header("Content-Disposition: attachment; filename=Reverse");
+	header("Content-Disposition: attachment; filename=angryToast");
 	header("Content-Description: Convrts Data");
 	echo $_SESSION['reverse'];
 	exit;
