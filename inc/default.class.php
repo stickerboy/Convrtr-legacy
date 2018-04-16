@@ -23,6 +23,17 @@ class Convrtr {
 	}
 
 	/**
+	 * Explode an array with multiple delimeters
+	 * http://php.net/manual/en/function.explode.php#111307
+	 */
+	function multiExplode($delimiters,$string) {
+
+		$ready = str_replace($delimiters, $delimiters[0], $string);
+		$launch = explode($delimiters[0], $ready);
+		return  $launch;
+	}
+
+	/**
 	 * Debug whatever
 	 */
 	function Debug($function) {
@@ -142,7 +153,7 @@ class Convrtr {
 	 * returns text string
 	 */
 	function decToStr($string) {
-		$split = explode(" ", $string);
+		$split = $this->multiExplode(array(","," ","|",":","-"), $string);
 		for($i=0; $i < sizeof($split); $i++)
 		{
 			$str .= chr($split[$i]);
