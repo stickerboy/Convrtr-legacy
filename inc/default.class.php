@@ -101,7 +101,7 @@ class Convrtr {
 	 * returns text string
 	 */
 	function hexToStr($string) {
-		$pattern = array(' ', '-', '\x', '0x');
+		$pattern = array(' ', '-', '\x', '0x', ',', ':');
 		$string = str_replace($pattern, '', $string);
 		$str = pack('H*', $string);
 
