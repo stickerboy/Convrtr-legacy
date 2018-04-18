@@ -85,6 +85,5 @@ $template->assign_vars(array(
 	'L_BYTESF_PNG'				=> '49 45 4E 44   AE 42 60 82',
 	'L_BYTES_PSD'				=> '38 42 50 53   00 01',
 	'L_BYTES_WAV'				=> '52 49 46 46   XX XX XX XX   57 41 56 45',
-	'L_BYTES_ZIP'				=> '50 4B 03 04',
-
+	'L_BYTES_ZIP'				=> '50 4B 03 04'
 ));
