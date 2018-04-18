@@ -56,7 +56,7 @@ function page_header($page_title = '')
 		'CURRENT_TIME'			=> sprintf("Current Time: %s", date('jS M Y', time())),
 		'PAGE_NAME'				=> $query_string,
 		'FILE_NAME'				=> $filename,
-		'ERROR_TXT'				=> $_SESSION['errors'],
+		'ERROR_TXT'				=> (isset($_SESSION['errors'])) ? $_SESSION['errors'] : null,
 
 		'META_DESC'				=> 'Convrtr',
 		'META_AUTHOR'			=> 'Kenny Cameron',
