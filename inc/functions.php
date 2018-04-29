@@ -61,13 +61,14 @@ function page_header($page_title = '')
 		'META_DESC'				=> 'Convrtr',
 		'META_AUTHOR'			=> 'Kenny Cameron',
 		'COPYRIGHT'				=> "@stckr " . date('Y'),
-		'VERSION'				=> '3.0.0-v34',
+		'VERSION'				=> '3.0.0-v35',
 
 		'ROOT_PATH'				=> $root_path,
 		'TEMPLATE_PATH'			=> $root_path . 'theme/html/',
 		'CSS_PATH'				=> $root_path . 'theme/css/',
 		'JS_PATH'				=> $root_path . 'theme/js/',
 		'IMG_PATH'				=> $root_path . 'theme/img/',
+		'FAVICONS_PATH'			=> $root_path . 'theme/img/favicons/',
 		'MEDIA_PATH'			=> $root_path . 'img/',
 
 		'U_HOME'				=> "{$root_path}",
