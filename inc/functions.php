@@ -61,7 +61,7 @@ function page_header($page_title = '')
 		'META_DESC'				=> 'Convrtr',
 		'META_AUTHOR'			=> 'Kenny Cameron',
 		'COPYRIGHT'				=> "@stckr " . date('Y'),
-		'VERSION'				=> '3.0.0-v32',
+		'VERSION'				=> '3.0.0-v33',
 
 		'ROOT_PATH'				=> $root_path,
 		'TEMPLATE_PATH'			=> $root_path . 'theme/html/',
