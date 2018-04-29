@@ -52,7 +52,7 @@
 .toggle-container > .toggle:hover .thumb,
 .toggle-container > .toggle:active .thumb,
 .toggle-container > .toggle:focus .thumb {
-	box-shadow: 0 0 0.1rem 0.4rem rgba(64, 175, 167, 0.4);
+	box-shadow: 0 0 0.1rem 0.4rem rgba(23, 162, 184, 0.4);
 }
 .toggle-container > .toggle:hover input[type="checkbox"]:checked + .background > .thumb,
 .toggle-container > .toggle:active input[type="checkbox"]:checked + .background > .thumb,
@@ -60,7 +60,7 @@
 	box-shadow: 0 0 0.1rem 0.4rem rgba(117, 117, 117, 0.25) !important;
 }
 .toggle-container > .toggle input[type="checkbox"]:checked + .background {
-	background-color: #53ddd3;
+	background-color: #17a2b8;
 }
 .toggle-container > .toggle input[type="checkbox"]:checked + .background > .thumb {
 	left: 2.6rem;

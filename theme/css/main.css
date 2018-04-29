@@ -39,6 +39,9 @@ body {
 .navbar-dark .navbar-nav .active  {
 	background-color: #19b1c9;
 }
+.clss {
+	cursor: pointer;
+}
 
 @media (min-width: 991.99px) {
 	.navbar {
