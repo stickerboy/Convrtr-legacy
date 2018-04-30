@@ -1,3 +1,61 @@
+$(document).ready(function() {
+	$(".rotlink").click(function(e) {
+		e.preventDefault();
+		var rotstring = $(".rottext").val();
+		if (rotstring != '') {
+			$(".alpha").removeClass("active");
+			$(".row").removeClass("d-none");
+			$(this).parent("li").addClass("active");
+			var rotnumber = $(this).attr('id').replace('rot', '');
+			$(".rotresult").html(rot(rotstring, parseInt(rotnumber)));
+			$(".rotdl").val(rot(rotstring, parseInt(rotnumber)));
+		}
+	});
+
+	var $first = $('.alpha:first', '.pagination');
+	var $last = $('.alpha:last', '.pagination');
+
+	/* Next prev highlighting of list elments
+	 * Idea taked from: https://stackoverflow.com/a/17707287/3172872
+	 */
+	$("#next").click(function (e) {
+		e.preventDefault();
+		var $next;
+		var $selected = $(".active");
+		// get the selected item
+		// If next li is empty , get the first
+		$next = $selected.next('.alpha').length ? $selected.next('.alpha') : $first;
+		$selected.removeClass("active");
+		$next.addClass('active');
+		$selected.next('.alpha').length ? $selected.next().children().click() : $first.children().click();
+	});
+
+	$("#prev").click(function (e) {
+		e.preventDefault();
+		var $prev,
+			$selected = $(".active");
+		// get the selected item
+		// If prev li is empty , get the last
+		$prev = $selected.prev('.alpha').length ? $selected.prev('.alpha') : $last;
+		$selected.removeClass("active");
+		$prev.addClass('active');
+		$selected.prev().children().click()
+		$selected.prev('.alpha').length ? $selected.prev().children().click() : $last.children().click();
+	});
+});
+
+/* function rot13(s) {
+	return s.replace( /[A-Za-z]/g , function(c) {
+		return String.fromCharCode( c.charCodeAt(0) + ( c.toUpperCase() <= "M" ? 13 : -13 ) );
+	} );
+}
+
+var text = "Hello HackerRank";
+var altered = text.rot13();
+
+console.log(altered); */
+
+
 /*! http://mths.be/rot v0.1.0 by @mathias | MIT license */
 ;(function(root) {
 

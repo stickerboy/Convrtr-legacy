@@ -1,234 +1,276 @@
 <!-- INCLUDE header.html -->
-    <div class="container marketing" id="top">
-    	<div class="row">
-    		<div class="span4 convrt-box" id="text">
-    			<div class="code-title">
-                    {L_TEXT}
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="text" rows="9">{POST_TEXT}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="encode" class="btn btn-success disabled"><i class="icon-white icon-chevron-right"></i> {L_ENCODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?text_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<!-- /.span4 -->
-    		<div class="span4 convrt-box" id="bin">
-    			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Binary_numeral_system">{L_BINARY}</a>
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="binary" rows="9">{POST_BINARY}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="bin_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?binary_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<!-- /.span4 -->
-    		<div class="span4 convrt-box" id="hex">
-    			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Hexidecimal">{L_HEX}</a>
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="hex" rows="9">{POST_HEX}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="hex_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?hex_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<div class="span4 convrt-box" id="b64">
-    			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Base64">{L_BASE64}</a>
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="base64" rows="9">{POST_B64}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="b64_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?b64_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<div class="span4 convrt-box" id="dec">
-    			<div class="code-title">
-    				<a href="http://www.asciitable.com">{L_DEC}</a>
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="decimal" rows="9">{POST_DEC}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="dec_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?dec_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<div class="span4 convrt-box" id="rev">
-    			<div class="code-title">
-    				{L_REVERSE}
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="reverse" rows="9">{POST_REV}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="rev_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?rev_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<div class="span4 convrt-box" id="morse">
-    			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Morse">{L_MORSE}</a>
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="morse" rows="9">{POST_MORSE}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="mor_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?morse_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<div class="span4 convrt-box" id="url">
-    			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Percent-encoding">{L_URL_ENC}</a>
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="urldecode" rows="9">{POST_URL}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="url_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>
-    					<div class="btn-group">
-    						<a href="{U_HOME}?url_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    		<div class="span4 convrt-box" id="morsenary">
-    			<div class="code-title">
-    				{L_MORSENARY}
-    			</div>
-    			<form action="{U_HOME}" method="post">
-    			<div class="control-group">
-    				<div class="controls">
-    					<textarea name="morsenary" rows="9">{POST_MORSENARY}</textarea>
-    				</div>
-    			</div>
-    			<div>
-    				<div class="btn-toolbar">
-    					<div class="btn-group">
-    						<button type="submit" name="msy_decode" class="btn disabled"><i class="icon-chevron-right"></i> {L_DECODE}</button>
-    					</div>    				
-    					<div class="btn-group">
-    						<a href="{U_HOME}?morsenary_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-    						<a class="btn btn-inverse disabled selectAll" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-    					</div>
-    				</div>
-    			</div>
-    			</form>
-    		</div>
-    	</div>
-		<div class="row">
-			<div class="span12 well convrt-box">
-    			<div class="code-title">
-    				<a href="http://en.wikipedia.org/wiki/Hash_function">{L_HASH}</a> (<a href="#" class="sh">{L_SHOW}</a>)
-    			</div>
-                <div class="shh" style="display:none;"><br />
-                    <div class="control-group">
-                        <div class="btn-toolbar">   				
-                            <div class="btn-group">
-                                <a href="{U_HOME}?hash_download" class="btn btn-inverse disabled" rel="tooltip" title="{L_DOWNLOAD}"><i class="icon-white icon-download-alt"></i></a>
-                                <a class="btn btn-inverse disabled" onclick="selectCode(this); return false;" rel="tooltip" title="{L_SELECT_TEXT}"><i class="icon-white icon-fullscreen"></i></a>
-                            </div>
-                        </div>                         
-                        <div class="controls">
-                            <pre class="prettyprint linenums">{POST_HASH}</pre>
-                        </div>
-                    </div>
-                </div>
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="text">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					{L_TEXT}
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="text" rows="9" class="form-control data-to-copy">{POST_TEXT}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_ENCODE}">
+								<button type="submit" name="encode" class="btn btn-info">
+									<i class="icon-white icon-chevron-right"></i> {L_ENCODE}
+								</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?text_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>     
+		</div>
+		<!-- /.col -->
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="bin">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					<a href="http://en.wikipedia.org/wiki/Binary_numeral_system" class="text-info">{L_BINARY}</a>
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="binary" rows="9" class="form-control data-to-copy">{POST_BINARY}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="bin_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?binary_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /.col -->
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="hex">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					<a href="http://en.wikipedia.org/wiki/Hexidecimal" class="text-info">{L_HEX}</a>
+					</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="hex" rows="9" class="form-control data-to-copy">{POST_HEX}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="hex_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?hex_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="b64">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					<a href="http://en.wikipedia.org/wiki/Base64" class="text-info">{L_BASE64}</a>
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="base64" rows="9" class="form-control data-to-copy">{POST_B64}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="b64_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?b64_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}"><i class="fas fa-download" aria-hidden="true"></i></a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}"><i class="fas fa-copy"></i></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="dec">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					<a href="http://www.asciitable.com" class="text-info">{L_DEC}</a>
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="decimal" rows="9" class="form-control data-to-copy">{POST_DEC}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="dec_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?dec_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="rev">
+			<div class="card js-convert">
+				<h5 class="card-header" rel="tooltip" title="tsaot yrgna">
+					{L_REVERSE}
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="reverse" rows="9" class="form-control data-to-copy">{POST_REV}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="angry toast">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="rev_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?rev_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="rot13">
+				<div class="card js-convert">
+					<h5 class="card-header">
+						<a href="https://en.wikipedia.org/wiki/ROT13" class="text-info">{L_ROT_COMMON}</a>
+					</h5>
+					<div class="card-body">
+						<form action="{U_HOME}" method="post">
+							<div class="form-group">
+								<textarea name="rot13decode" rows="9" class="form-control data-to-copy">{POST_ROT13}</textarea>
+							</div>
+							<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+								<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+									<button type="submit" name="url_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+								</div>
+								<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+									<a href="{U_HOME}?url_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+										<i class="fas fa-download" aria-hidden="true"></i>
+									</a>
+									<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+										<i class="fas fa-copy"></i>
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="morse">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					<a href="http://en.wikipedia.org/wiki/Morse" class="text-info">{L_MORSE}</a>
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="morse" rows="9" class="form-control data-to-copy">{POST_MORSE}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="mor_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?morse_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4" id="morsenary">
+			<div class="card js-convert">
+				<h5 class="card-header">
+					{L_MORSENARY}
+				</h5>
+				<div class="card-body">
+					<form action="{U_HOME}" method="post">
+						<div class="form-group">
+							<textarea name="morsenary" rows="9" class="form-control data-to-copy">{POST_MORSENARY}</textarea>
+						</div>
+						<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
+							<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
+								<button type="submit" name="msy_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+							</div>
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?morsenary_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<i class="fas fa-download" aria-hidden="true"></i>
+								</a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
+									<i class="fas fa-copy" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="accordion" class="row">
+		<div class="col p-0">
+			<div class="card">
+				<div class="card-header" id="hashHeading">
+					<h5 class="mb-0">
+						<button class="btn btn-link text-info" data-toggle="collapse" data-target="#collapseHash" aria-expanded="true" aria-controls="collapseHash">
+							{L_HASH}
+						</button>
+					</h5>
+				</div>
+				<div id="collapseHash" class="collapse" aria-labelledby="hashHeading" data-parent="#accordion">
+					<div class="card-body">
+						<!-- IF POST_HASH -->
+						<div class="btn-toolbar mb-4" role="toolbar" aria-label="">
+							<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
+								<a href="{U_HOME}?hash_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}"><i class="fas fa-download" aria-hidden="true"></i></a>
+								<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}"><i class="fas fa-copy"></i></a>
+							</div>
+						</div>
+						<pre class="prettyprint linenums wrap data-to-copy">{POST_HASH}</pre>
+						<!-- ENDIF -->
+						(<a href="http://en.wikipedia.org/wiki/Hash_function" class="text-info">{L_HASH} Info</a>)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <!-- INCLUDE footer.html -->
