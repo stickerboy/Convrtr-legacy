@@ -9,7 +9,7 @@ if(!empty($rot)) {
 	$str		= $Convrtr->rotText($rot);
 	$rot_orig	= $rot;
 
-	$b64		= $Convrtr->b64ToStr($base64);
+	$b64		= $Convrtr->b64ToStr($str);
 	$bin		= $Convrtr->strToBin($str);
 	$hex		= $Convrtr->strToHex($str);
 	$dec		= $Convrtr->strToDec($str);
