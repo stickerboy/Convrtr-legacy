@@ -14,7 +14,7 @@ if(!empty($reverse)) {
 	$b64		= $Convrtr->strToB64($str);
 	$dec		= $Convrtr->strToDec($str);
 	$mor		= $Convrtr->strToMorse($str);
-	$tor		= $Convrtr->rotText($text);
+	$tor		= $Convrtr->rotText($str);
 	$msy		= $Convrtr->strToMorsenary($str);
 	$hash		= $Convrtr->returnHash($str);
 }

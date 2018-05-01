@@ -15,7 +15,7 @@ if(!empty($morsenary)) {
 	$dec		= $Convrtr->strToDec($str);
 	$rev		= $Convrtr->reverseStr($str);
 	$mor		= $Convrtr->strToMorse($str);
-	$tor		= $Convrtr->rotText($text);
+	$tor		= $Convrtr->rotText($str);
 	$hash		= $Convrtr->returnHash($str);
 }
 
