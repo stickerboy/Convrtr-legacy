@@ -169,7 +169,7 @@ class Convrtr {
 	 * returns array
 	 */
 	function morseMap() {
-		$map = array (
+		$map = array(
 			'0' => '----- ','1' => '.---- ','2' => '..--- ','3' => '...-- ','4' => '....- ','5' => '..... ','6' => '-.... ','7' => '--... ',
 			'8' => '---.. ','\'' => '.----. ','9' => '----. ','B' => '-... ',',' => '-.-.-. ','@' => '.--.-. ','C' => '-.-. ','"' => '.-..-. ','/' => '-..-. ',
 			'F' => '..-. ','(' => '-.--. ','P' => '.--. ','G' => '--. ','H' => '.... ','J' => '.--- ',')' => '-.--.- ','Q' => '--.- ',
@@ -188,12 +188,12 @@ class Convrtr {
 	 */
 	function strToMorse($string) {
 		$maps = $this->morseMap();
-
 		$string = str_split(strtoupper($string));
 		$converted = array();
+
 		foreach ($string as $letter) {
 			foreach ($maps as $input => $output) {
-				if ($letter === $input) {
+				if ($letter === (string)$input) {
 					$converted[] = $output;
 				}
 			}
