@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  * Hex Patterns
  */
 
@@ -8,8 +8,8 @@ $case_sensitive = (isset($_REQUEST['case_sensitive'])) ? true : false;
 $delimiter = (isset($_REQUEST['delimiter'])) ? $_REQUEST['delimiter'] : '';
 
 if(!empty($hexpattern)) {
-	$str           = $Convrtr->hexAnalyse($hexpattern, $case_sensitive, $delimiter);
-	$hex_pattern   = $hexpattern;
+	$str			= $Convrtr->hexAnalyse($hexpattern, $case_sensitive, $delimiter);
+	$hex_pattern	= $hexpattern;
 }
 
-$hex_pattern 	   = $_SESSION['hexpattern'] 	= $str;
+$hex_pattern		= $_SESSION['hexpattern']	= $str;

@@ -1,40 +1,46 @@
 <!-- INCLUDE header.html -->
-    <div class="container marketing" id="top">
-        <div class="row">            
-			<div class="span12 well convrt-box" id="check">
-    			<div class="code-title">
-    				{L_CHECK_FILES}
-    			</div><br />
-                <div class="alert alert-info">
-                    {L_CHECK_EXP}
-                </div>                
-                <div>
-                    <!-- IF S_ERROR -->
-                    <div id="error">
-                    <!-- BEGIN errors -->
-                        <div class="alert alert-error">
-                            <a class="close" data-dismiss="alert">×</a>
-                            {errors.ERROR_TXT}
-                        </div>
-                    <!-- END errors -->
-                    </div>                    
-                    <!-- ENDIF -->
-                    <!-- IF S_MESSAGE -->
-                        <div class="alert alert-success">
-                            {S_MESSAGE}
-                        </div>
-                    <!-- ENDIF -->                    
-                    <div class="control-group">                      
-                        <div class="controls">
-                            <form action="{U_CHECK}" method="post" enctype="multipart/form-data">
-                                <div class="input-append">
-                                    <input class="span3" id="appendedInputButton" type="file" name="tmpFile">
-                                    <button class="btn" type="submit" name="check">Upload!</button>
-                                </div>                                
-                            </form>
-                        </div>
-                    </div>
-                </div>
+	<div class="row">
+		<div class="col" id="check">
+			<div class="card">
+				<h5 class="card-header">
+					{L_CHECK_FILES}
+				</h5>
+				<div class="card-body">
+					<div class="alert alert-info">
+						{L_CHECK_EXP}
+					</div>
+					<div>
+						<!-- IF S_FILE_ERROR -->
+						<div id="error">
+						<!-- BEGIN errors -->
+							<div class="alert alert-danger">
+								<a class="close" data-dismiss="alert">×</a>
+								{errors.ERROR_TXT}
+							</div>
+						<!-- END errors -->
+						</div>
+						<!-- ENDIF -->
+						<!-- IF S_MESSAGE -->
+							<div class="alert alert-info">
+								{S_MESSAGE}
+							</div>
+						<!-- ENDIF -->
+						<div class="form-group mb-0">
+							<form action="{U_CHECK}" method="post" enctype="multipart/form-data">
+								<div class="input-group mb-0">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="file-headers" name="tmpFile">
+										<label class="custom-file-label" for="file-headers">Choose file</label>
+									</div>
+									<div class="input-group-append">
+										<button class="btn btn-info" type="submit" name="check">Upload!</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
 <!-- INCLUDE footer.html -->

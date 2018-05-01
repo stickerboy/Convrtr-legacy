@@ -4,83 +4,87 @@
 /* Padding below the footer and lighter body text */
 
 body {
-    padding-bottom: 40px;
-    color: #5a5a5a;
-}
-
-.convrt-box {
-    position: relative;
-    margin-bottom: 15px;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    margin-right: -2px;
+	padding-bottom: 4rem;
+	margin-top: 6rem;
+	color: #5a5a5a;
 }
 .code-title {
-    background-color: #F5F5F5;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px 0px 4px 0px;
-    color: #585858;
-    font-size: 12px;
-    font-weight: bold;
-    left: -1px;
-    padding: 3px 7px;
-    position: absolute;
-    top: -1px;
+	background-color: #F5F5F5;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0px 4px 0px;
+	color: #585858;
+	font-size: 12px;
+	font-weight: bold;
+	left: -1px;
+	padding: 3px 7px;
+	position: absolute;
+	top: -1px;
 }
 .convrt-box textarea {
-    margin-top: 30px;
-    width: 90%;
-    background-color: #f7f7f7;
+	margin-top: 3rem;
+	width: 90%;
+	background-color: #f7f7f7;
 }
 .convrt-box.pad {
-    padding: 2px 20px;
-}
-.btn.disabled, .btn[disabled] {
-    cursor: pointer;
+	padding: 2px 20px;
 }
 
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .span4 {
-    text-align: center;
+.navbar .nav-link {
+	padding: 1.25rem;
 }
-.marketing h2 {
-    font-weight: normal;
+.dropdown-item:focus, .dropdown-item:hover {
+	background-color: #17a2b8;
+	color: #fff;
 }
-.marketing .span4 p {
-    margin-left: 10px;
-    margin-right: 10px;
+.navbar-dark .navbar-nav .active  {
+	background-color: #19b1c9;
 }
-.container.marketing {
-    padding-top: 80px;
+.clss {
+	cursor: pointer;
 }
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (max-width: 979px) {
-
-    .container.marketing {
-        padding-top: 30px;
-    }
+@media (min-width: 991.99px) {
+	.navbar {
+		padding: 0;
+	}
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+@media (max-width: 991.98px) {
+	.navbar .container {
+		padding: 0;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+	.navbar .collapse.show {
+		margin-top: 1rem;
+	}
+	.navbar .dropdown-menu.show {
+		border-radius: 0;
+		border: none;
+		background-color: #1593a7;
+	}
+	.navbar .dropdown-menu.show .dropdown-item {
+		color: #fff;
+		padding: 0.5rem 1.5rem;
+	}
+	.navbar-text, .nav-clear-session {
+		margin-left: 1rem;
+	}
 }
 
-@media (max-width: 767px) {
-
-    .marketing .span4 + .span4 {
-        margin-top: 40px;
-    }
-    
-    .container.marketing {
-        padding-top: 30px;
-    }
+.page-link {
+	color: #17a2b8;
 }
-
-.convrt-box .form-horizontal .control-label {
-    width:114px;
+.page-link:hover {
+	color: #138395;
 }
-.convrt-box .form-horizontal .controls {
-    margin-left: 120px;
+.page-link:focus {
+	box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25)
+}
+.page-item.active .page-link {
+	background-color: #17a2b8;
+	border-color: #17a2b8;
 }

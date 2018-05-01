@@ -1,54 +1,91 @@
-    	<hr>
-    	<footer>
-            <!-- IF DEBUG_INFO -->
-            <div class="alert alert-info">
-                {DEBUG_INFO}
-            </div>
-            <!-- ENDIF -->
-    		<p class="pull-right">
-    			<a href="#top">{L_BACKTOTOP}</a>
-    		</p>
-    		<p>
-    			{COPYRIGHT}
-    		</p>
-    	</footer>
-    </div>
-    <script src="{JS_PATH}jquery.js"></script>
-    <script src="{JS_PATH}bootstrap.js"></script>
-    <script src="{JS_PATH}holder.js"></script>
-    <script src="{JS_PATH}pretify.js"></script>
-    <script src="{JS_PATH}switch.js"></script>
-    <script src="{JS_PATH}stuff.js"></script>
-    <!-- IF FILE_NAME eq 'rot' -->
-    <script src="{JS_PATH}rot.js"></script>
-    <script>
-        $( document ).ready(function() {
-            $(".rotlink").click(function(e) {
-                e.preventDefault;
-                var rotstring = $(".rottext").val();
-                if (rotstring != '') {
-                    $(".alpha").removeClass("active");
-                    $(".convrt-box").removeClass("hidden");
-                    $(this).parent("li").addClass("active");
-                    var rotnumber = $(this).attr('id').replace('rot', '');
-                    $(".rotresult").html(rot(rotstring, parseInt(rotnumber)));
-                    $(".rotdl").val(rot(rotstring, parseInt(rotnumber)));
-                }
-            });
-        });
-    </script>
-    <!-- ENDIF -->
-    <script>
-        $('[rel="tooltip"]').tooltip();
-        
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
-        ga('create', 'UA-41817608-1', 'stckr.co.uk');
-        ga('send', 'pageview');
-       
-    </script>
+		<hr>
+		<!-- IF DEBUG_INFO -->
+			<div class="alert alert-info">
+				{DEBUG_INFO}
+			</div>
+		<!-- ENDIF -->
+
+		<footer class="text-muted">
+			<div class="container">
+				<p class="float-right">
+					<a href="#top" class="text-info">{L_BACKTOTOP}</a>
+				</p>
+				<p>{COPYRIGHT}</p>
+			</div>
+		</footer>
+	</div>
+	<script src="{JS_PATH}jquery.min.js"></script>
+	<script src="{JS_PATH}popper.min.js"></script>
+	<script src="{JS_PATH}bootstrap.min.js"></script>
+	<script src="{JS_PATH}pretify.js"></script>
+	<script src="{JS_PATH}clip.js"></script>
+	<!-- IF FILE_NAME eq 'rot' -->
+	<script src="{JS_PATH}rot.js"></script>
+	<!-- ENDIF -->
+	<!-- IF FILE_NAME eq 'flip' -->
+	<script src="{JS_PATH}flip.js"></script>
+	<!-- ENDIF -->
+	<script src="{JS_PATH}stuff.js"></script>
+	<script>
+		$('[rel="tooltip"]').tooltip();
+
+		// https://stackoverflow.com/a/49827858/3172872
+		// Slightly tweaked to fixed resetting on refresh
+		let darkEnabled = localStorage.darkEnabled;
+		const cssElem = document.querySelector('link[rel="stylesheet"]#theme');
+
+		if (darkEnabled == null || darkEnabled == "false") {
+			cssElem.href = '{CSS_PATH}main.css';
+			$('#change-theme').text('Enable Dark Mode');
+		} else {
+			cssElem.href = '{CSS_PATH}dark.css';
+			$('#change-theme').text('Enable Light Mode');
+		}
+		document.getElementById("change-theme")
+		.addEventListener('click', function () {
+			darkEnabled = darkEnabled == "false" ? "true" : "false";
+			localStorage.darkEnabled = darkEnabled;
+			if (darkEnabled == null || darkEnabled == "false") {
+				$('#change-theme').text('Enable Dark Mode');
+				cssElem.href = '{CSS_PATH}main.css';
+			} else {
+				$('#change-theme').text('Enable Light Mode');
+				cssElem.href = '{CSS_PATH}dark.css';
+			}
+		});
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-41817608-1', 'stckr.co.uk');
+		ga('send', 'pageview');
+	</script>
   </body>
 </html>
+<!--
+//START FILE/ IETY JNM URER
+/Packet detected..
+/Processing......
+/Packet found:
+/UoneFVQVJFUoneFVQVJFUoneFVQVJFUEVOVEFTUVVBUkVFTEVQRUfiveUQUPVFNRVUFSRUZPWFBFTlRBTknineUUoneFVQVJFTknineOQVBFTlRBRFVBTA==
+/END FILE ../
+MMMMMMMWKc;.                 ;cXWMMMMMMM
+MMMMMMWNK:.  .'''.......''.. .:NWMMMMMMM
+MMMMWWxo,. ,xKXKKK0000KKKXKd, .';oMWMMMM
+MMMWXNl'..ckKKOdl:;,,,;:lkKXOc. .:xXWMMM
+MMW0o;. 'dKX0o::lxOKXKOo,'lOXKd' .'lxWMM
+MWdo,..:kKKxc:xXXNNNNXXX0c.cOKKk:..,:oNM
+Kk'. .c0XXKc:OXXNNWWWNNXXO:.:KXX0c. ..KN
+kc. .cKXXXXKKNNWWWNNNNXX0d::dKXXXKc. .lO
+c.  ;kXNNNNNNNNNNNNNNKkl;;o0XXXXXKx;  .c
+0d. .c0XXNNWWWWWNNKOd;':dd:dKXXXX0c. .d0
+NKl, .:ONNNNNNNNNXo'.;ooxO0KXXXXO:. ',0N
+WWNx;. ,dKXNNNNNXK; ,;.;xKXXXXKx, .;okWM
+WWWOo:. .l0XXNNNNX:  .cOXXXXX0l. .:oxMMM
+WWWWWWo,..;kXXXXXKl':kKXXXXKx;..;oWWMMWW
+WWWWWWkl:. .l0KKKKK0KKKKKK0o. .:lkMMMMNN
+MWWWWWWWXl,  ..............  ,lNWMMMMMNN
+MWWWWWWWNd:.                .:oNWMMMMMWW
+-->
