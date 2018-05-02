@@ -131,7 +131,7 @@ $template->assign_vars(array(
 	'POST_DEC'		=> $dec,
 	'POST_REV'		=> stripslashes($rev),
 	'POST_MORSE'	=> $mor,
-	'POST_ROT13'	=> $rot13,
+	'POST_ROT13'	=> $tor,
 	'POST_MORSENARY'=> $msy,
 	'POST_HASH'		=> nl2br($hash),
 

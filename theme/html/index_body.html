@@ -170,14 +170,14 @@
 					<div class="card-body">
 						<form action="{U_HOME}" method="post">
 							<div class="form-group">
-								<textarea name="rot13decode" rows="9" class="form-control data-to-copy">{POST_ROT13}</textarea>
+								<textarea name="rot13" rows="9" class="form-control data-to-copy">{POST_ROT13}</textarea>
 							</div>
 							<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="">
 								<div class="btn-group mr-2" role="group" aria-label="{L_DECODE}">
-									<button type="submit" name="url_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
+									<button type="submit" name="rot_decode" class="btn btn-outline-secondary"><i class="icon-chevron-right"></i> {L_DECODE}</button>
 								</div>
 								<div class="btn-group" role="group" aria-label="{L_DOWNLOAD_COPY}">
-									<a href="{U_HOME}?url_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
+									<a href="{U_HOME}?rot_download" class="btn btn-secondary" rel="tooltip" title="{L_DOWNLOAD}">
 										<i class="fas fa-download" aria-hidden="true"></i>
 									</a>
 									<a href="#" class="btn btn-secondary js-copy" rel="tooltip" title="{L_COPY_TEXT}">
