@@ -455,54 +455,27 @@ class Convrtr {
 	 * returns file header or unknown
 	 */
 	function identifyHeader($string) {
-
-		if(substr($string, 0, 5) == '42 4D') {
-			$header = "BMP";
-		}
-		else if(substr($string, 0, 23) == 'D0 CF 11 E0 A1 B1 1A E1') {
-			$header = "DB, DOC, DOT, PPS, PPT, XLS, VSD, WPS";
-		}
-		else if(substr($string, 0, 2) == '78') {
-			$header = "DMG";
-		}
-		else if(substr($string, 0, 5) == '4D 5A') {
-			$header = "DLL, EXE, PIF, SCR, SYS";
-		}
-		else if(substr($string, 0, 14) == '49 44 33 03 37' || substr($string, 0, 14) == '49 44 33 03 39') {
-			$header = "GIF";
-		}
-		else if(substr($string, 0, 8) == 'FF D8 FF') {
-			$header = "JPG";
-		}
-		else if(substr($string, 0, 34) == '4D 54 68 64 00 00 00 06') {
-			$header = "MIDI";
-		}
-		else if(substr($string, 0, 11) == '49 44 33 03') {
-			$header = "MP3";
-		}
-		else if(substr($string, 0, 23) == '66 74 79 70 69 73 6F 6D' || substr($string, 0, 23) == '66 74 79 70 6D 70 34 32') {
-			$header = "MP4";
-		}
-		else if(substr($string, 0, 11) == '25 50 44 46') {
-			$header = "PDF";
-		}
-		else if(trim($string) == '89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52') {
-			$header = "PNG";
-		}
-		else if(substr($string, 0, 17) == '38 42 50 53 00 01') {
-			$header = "PSD";
-		}
-		else if(substr($string, 0, 11) == '52 49 46 46') {
-			$header = "WAV";
-		}
-		else if(substr($string, 0, 11) == '50 4B 03 04') {
-			$header = "ZIP";
-		}
-		else {
-			$header = 'Unknown';
-		}
-
-		return $header;
+		$HEADERS = array(
+							'89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52' => 'PNG', 
+							'D0 CF 11 E0 A1 B1 1A E1' => 'DB, DOC, DOT, PPS, PPT, XLS, VSD, WPS',
+							'4D 54 68 64 00 00 00 06' => 'MIDI',
+							'66 74 79 70 69 73 6F 6D' => 'MP4',
+							'66 74 79 70 6D 70 34 32' => 'MP4',
+							'38 42 50 53 00 01' => 'PSD',
+							'49 44 33 03 37' => 'GIF',
+							'49 44 33 03 39' => 'GIF',
+							'49 44 33 03' => 'MP3',
+							'25 50 44 46' => 'PDF',
+							'52 49 46 46' => 'WAV',
+							'50 4B 03 04' => 'ZIP',
+							'FF D8 FF' => 'JPG',
+							'42 4D' => 'BMP',
+							'4D 5A' => 'DLL, EXE, PIF, SCR, SYS',
+							'78' => 'DMG');
+		$result = array_filter($HEADERS, function($fmt, $bytes) use($string) {
+			return strpos($string, $bytes) === 0;
+		}, ARRAY_FILTER_USE_BOTH);
+		return $result ? current($result) : "Unknown";
 	}
 
 	/**
