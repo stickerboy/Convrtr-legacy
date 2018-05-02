@@ -3,13 +3,13 @@
  * ROT Text
  */
 
-$rot = $_SESSION['rot_orig'] = $_REQUEST['rot_orig'];
+$rot = $_SESSION['rot13'] = $_REQUEST['rot13'];
 
 if(!empty($rot)) {
 	$str		= $Convrtr->rotText($rot);
-	$rot_orig	= $rot;
+	$tor		= $rot;
 
-	$b64		= $Convrtr->b64ToStr($str);
+	$b64		= $Convrtr->strToB64($str);
 	$bin		= $Convrtr->strToBin($str);
 	$hex		= $Convrtr->strToHex($str);
 	$dec		= $Convrtr->strToDec($str);
