@@ -286,6 +286,25 @@ class Convrtr {
 		return $hash;
 	}
 
+		/**
+	* Counts character occurences in a multibyte string
+	* @param string $input UTF-8 data
+	* @return array associative array of characters.
+	* @link http://php.net/manual/en/function.count-chars.php#107336
+	*/
+	function mb_count_chars($input) {
+		$l = mb_strlen($input, 'UTF-8');
+		$unique = array();
+		for($i = 0; $i < $l; $i++) {
+			$char = mb_substr($input, $i, 1, 'UTF-8');
+			if(!array_key_exists($char, $unique))
+				$unique[$char] = 0;
+			$unique[$char]++;
+		}
+		return array_keys($unique);
+	}
+
+
 	/**
 	 * Character counts - spaces and uniques
 	 *
@@ -296,8 +315,8 @@ class Convrtr {
 		$counts			= '';
 		$counts			.= "Word &amp; Characters Counter / Frequencies\r\n----------------------------------------\r\n";
 
-		$chars			= strlen($string);
-		$chars_nospace	= strlen($strip_space);
+		$chars			= grapheme_strlen($string);
+		$chars_nospace	= grapheme_strlen($strip_space);
 		$size			= $this->formatSize(strlen($string)); //mb_strlen, '8bit')
 
 		$counts .="Characters (spaces) \t = $chars\r\nCharacters (no spaces) \t = $chars_nospace\r\nFilesize \t\t = $size\r\n";
@@ -307,9 +326,10 @@ class Convrtr {
 		$counts			.= "Whitespace count \t = $spaces\r\n";
 
 		if($uc) {
-			$unique_chars	= count_chars($strip_space, 3);
-			$unique_chars_count = strlen($unique_chars);
-			$counts .= "Unique Characters \t = ($unique_chars_count) $unique_chars\r\n";
+			$unique_chars	= $this->mb_count_chars($strip_space);
+			$unique_chars_count = count($unique_chars);
+			$uniq_output = join($unique_chars);
+			$counts .= "Unique Characters \t = ($unique_chars_count) ($uniq_output)\r\n";
 		}
 
 		return $counts;
